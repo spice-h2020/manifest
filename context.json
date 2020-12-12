@@ -1,0 +1,39 @@
+"@context": {
+  "ex": "https://w3id.org/spice/example/",
+  "prov": "http://www.w3.org/ns/prov#",
+  "rdfs":"http://www.w3.org/2000/01/rdf-schema#",
+  "p-plan":"http://purl.org/net/p-plan#",
+
+  "Artefact":"ex:Artefact",
+  "Activity": "prov:Activity",
+  "Association": "prov:Association",
+  "CitizenCurationActivity":"prov:Bundle",
+  "Story": "prov:Entity",
+  "StoryCollection":"prov:Collection",
+  "Plan":"prov:Plan",
+  "Step":"p-plan:Step",
+
+  "comment":"rdfs:comment",
+
+  "agent":"prov:agent",
+  "associated_to":"prov:qualifiedAssociation",
+  "following":"prov:wasEndedBy",
+  "location":"prov:location",
+  "script": "prov:hadPlan",
+  "stages":"prov:wasAssociatedWith",
+  "part":"prov:hadMember",
+  "used": "prov:used",
+  "generated": "prov:generated",
+  "role":"prov:hadRole",
+
+  "input":"p-plan:hasInputVar",
+  "output":"p-plan:hasOutputVar",
+
+  "purpose":"http://dbpedia.org/ontology/purpose",
+  "setting":"ex:has_setting",
+  "step":"ex:has_step",
+  "web_content":"ex:web_content",
+  "interaction_type":"ex:interaction_type",
+  "context_type":"ex:context_type"
+
+}
