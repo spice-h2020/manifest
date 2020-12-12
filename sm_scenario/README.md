@@ -283,15 +283,18 @@ A script can be represented as a sequence of general steps, having input and out
   }]
 }
 ```
+
 Questions
 
  * What is the best way to represent inputs and output values? Classes or individuals?
  * Should a script reference the general concepts (classes or individuals) or the specific inputs/outputs? e.g. "Artefact" or "ex:savoy_vase".
  * do we need activity status?
+ * where to include developers' annotations?
 
 TODO
 
  * add social media managers' posts
+ * add generated annotations of developers
  * add time of activities
 
 When the scenario it's easy, we can use shortcuts like the following:
