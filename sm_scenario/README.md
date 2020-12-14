@@ -86,7 +86,7 @@ Complete JSON-LD example: [example](https://github.com/spice-h2020/manifest/tree
 
 #### Citizen Curation activity
 
-A **Citizen Curation activity** is an set of activities wherein citizens interact with artefacts and people and produce citizen curation objects (to be defined). This activity is characterised by a *setting* (including *technical requirements*), a *purpose*, and a number of sequential *stages*.
+A **Citizen Curation activity** is a set of activities wherein citizens interact with artefacts and people and produce citizen curation objects (to be defined). This activity is characterised by a *setting* (including *technical requirements*), a *purpose*, and a number of sequential *stages*.
 
 ```
 {
@@ -99,17 +99,17 @@ A **Citizen Curation activity** is an set of activities wherein citizens interac
 }
 ```
 
-The setting includes information like the *type* of interaction, whether it is remote or in presence, the location.
+The setting includes information like the *type* of interaction, whether it is remote or in presence, and the location.
 
 ```
 "setting":{
   "interaction_type":"ex:remote",
-  "context_type":"ex:social_media_campaign",
+  "context":"ex:social_media_campaign",
   "location":"ex:unknown"
   }
 ```
 
-Each **stage** is composed by one or more *activities*, performed by one or more *agent* with a certain *role*, using a *script* as a plan. Each activity can *generate* one or more outputs.
+Each **stage** is composed by one or more *activities*, performed by one or more *agents* having a certain *role*, and using a *script* as a plan. Each activity may *generate* one or more outputs.
 
 For instance, in the preparation stage an activity performed by a curator of the museum generates a post launching the campaign.
 
@@ -248,7 +248,7 @@ Lastly, curators present the selected posts on their instagram profile.
 
 Every activity performed in a stage is associated to a script (`prov:Plan`), which can be defined separately.
 
-For instance, the preparation stage (which is not explicitly described) has one activity `ex:preparation_1_1`, representing the launch of the social media campaign. This activity is associated to a responsible agent, having a role and a script `ex:preparation_script_1` (more agents with different roles and scripts can be associated to the same activity).
+For instance, the preparation stage (which is not explicitly described as such) has one activity `ex:preparation_1_1`, representing the launch of the social media campaign. This activity is associated to a responsible agent, having a role and a script `ex:preparation_script_1` (more agents with different roles and scripts can be associated to the same activity).
 
 ```
 "@id":"ex:preparation_1_1",
@@ -272,30 +272,34 @@ A script can be represented as a sequence of general steps, having input and out
   "has_step": [{
     "@id": "ex:artefact_selection",
     "@type":"Step",
-    "input": ["Artefact","Collection"]
+    "input": ["Artefact","Collection"],
     "output": ["Artefact","Collection"]
   },
   {
     "@id": "ex:post_publication",
     "@type":"Step",
-    "input": ["Image","Text"]
-    "output": ["Story"]
+    "input": ["Image","Text"],
+    "output": ["Story"],
+    "preceding":"ex:artefact_selection"
   }]
 }
 ```
 
 Questions
 
- * What is the best way to represent inputs and output values? Classes or individuals?
- * Should a script reference the general concepts (classes or individuals) or the specific inputs/outputs? e.g. "Artefact" or "ex:savoy_vase".
+ * Do we need to annotate activities (or scripts) as part of a certain stage?
+ * What is the best way to represent input and output values in the scripts? Should a script reference the general concepts (classes or individuals representing an abstract concept, e.g. select an "Artefact", or the specific inputs/outputs, e.g. select "ex:savoy_vase"?
+ * So far, scripts reference general concepts, activities reference specific individuals. What if activities having several steps take different inputs and generated different outputs for each step?
+ * what if there are no outputs?
+ * do we need to reference methods used in activities rather than input/output?
  * do we need activity status?
- * where to include developers' annotations?
+ * where to include developers' annotations? In the analysis activity or in the metadata of the CCO? Or both?
 
 TODO
 
  * add social media managers' posts
  * add generated annotations of developers
- * add time of activities
+ * add timespans of activities
 
 When the scenario it's easy, we can use shortcuts like the following:
 
@@ -326,7 +330,7 @@ In the running stage, one or more citizen curation objects are realized.
     "part": [
       {
         "@id":"ex:text_1",
-        "@value":"Osallistun tällä postauksella Designmuseon sometallennuspäivään, joka liittyy museoiden yhteiseen nykydokumentointitempaukseen…"
+        "content":"Osallistun tällä postauksella Designmuseon sometallennuspäivään, joka liittyy museoiden yhteiseen nykydokumentointitempaukseen…"
       },
       {
         "@id":"ex:img_1",

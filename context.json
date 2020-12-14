@@ -28,12 +28,14 @@
 
   "input":"p-plan:hasInputVar",
   "output":"p-plan:hasOutputVar",
+  "preceding":"p-plan:isPrecededBy",
 
   "purpose":"http://dbpedia.org/ontology/purpose",
   "setting":"ex:has_setting",
   "step":"ex:has_step",
   "web_content":"ex:web_content",
   "interaction_type":"ex:interaction_type",
-  "context_type":"ex:context_type"
+  "context":"ex:context_type",
+  "content":"ex:content"
 
 }

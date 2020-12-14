@@ -22,14 +22,15 @@
           "has_step": [{
             "@id": "ex:artefact_selection",
             "@type":"Step",
-            "input": ["Artefact","Collection"]
+            "input": ["Artefact","Collection"],
             "output": ["Artefact","Collection"]
           },
           {
             "@id": "ex:post_publication",
             "@type":"Step",
-            "input": ["Image","Text"]
-            "output": ["Story"]
+            "input": ["Image","Text"],
+            "output": ["Story"],
+            "preceding":"ex:artefact_selection"
           }]
         }
       },
@@ -66,7 +67,7 @@
           "part": [
             {
               "@id":"ex:text_1",
-              "@value":"Osallistun tällä postauksella Designmuseon sometallennuspäivään, joka liittyy museoiden yhteiseen nykydokumentointitempaukseen…"
+              "content":"Osallistun tällä postauksella Designmuseon sometallennuspäivään, joka liittyy museoiden yhteiseen nykydokumentointitempaukseen…"
             },
             {
               "@id":"ex:img_1",
