@@ -290,8 +290,23 @@ Questions
  * Do we need to annotate activities (or scripts) as part of a certain stage?
  * What is the best way to represent input and output values in the scripts? Should a script reference the general concepts (classes or individuals representing an abstract concept, e.g. select an "Artefact", or the specific inputs/outputs, e.g. select "ex:savoy_vase"?
  * So far, scripts reference general concepts, activities reference specific individuals. What if activities having several steps take different inputs and generated different outputs for each step?
+
+ ```
+ "@id":"ex:preparation_1_1",
+ "has_step": [...],
+ "used": [{
+   "@id":"ex:savoy_vase",
+   "@type": "Artefact"
+   }],
+ "generated": [{
+   "@id":"ex:curator_post_1",
+   "@type": "Story",
+   "web_content":"https://www.instagram.com/p/CFKIGypBG7C/"
+ }]
+ ```
+
  * what if there are no outputs?
- * do we need to reference methods used in activities rather than input/output?
+ * do we need to reference methods used in activities along with potential input/output?
  * do we need activity status?
  * where to include developers' annotations? In the analysis activity or in the metadata of the CCO? Or both?
 
@@ -300,22 +315,6 @@ TODO
  * add social media managers' posts
  * add generated annotations of developers
  * add timespans of activities
-
-When the scenario it's easy, we can use shortcuts like the following:
-
-```
-"@id":"ex:preparation_1_1",
-"has_step": [...],
-"used": [{
-  "@id":"ex:savoy_vase",
-  "@type": "Artefact"
-  }],
-"generated": [{
-  "@id":"ex:curator_post_1",
-  "@type": "Story",
-  "web_content":"https://www.instagram.com/p/CFKIGypBG7C/"
-}]
-```
 
 #### User stories
 
@@ -339,13 +338,11 @@ In the running stage, one or more citizen curation objects are realized.
     ]
 }]
 ```
-Questions:
-
- * part/whole relation (CCO and museum object) - since the object recognition it something that is associated in the "analysis stage", should it be represented here? Same applies to the narrative structure.
-
 
 TODO:
 
  * Represent Size, weight, etc
- * Represent Story/narrative about artifact
- * generated comments by other users
+ * Represent time 
+ * Represent part/whole relation (CCO depicted and museum object)
+ * Represent Story/narrative
+ * Represent generated comments by other users
