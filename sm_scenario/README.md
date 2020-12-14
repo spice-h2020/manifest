@@ -288,6 +288,7 @@ A script can be represented as a sequence of general steps, having input and out
 Questions
 
  * Do we need to annotate activities (or scripts) as part of a certain stage?
+ * Do we want to specify the type `Plan` in subclasses?
  * What is the best way to represent input and output values in the scripts? Should a script reference the general concepts (classes or individuals representing an abstract concept, e.g. select an "Artefact", or the specific inputs/outputs, e.g. select "ex:savoy_vase"?
  * So far, scripts reference general concepts, activities reference specific individuals. What if activities having several steps take different inputs and generated different outputs for each step?
 
@@ -342,7 +343,7 @@ In the running stage, one or more citizen curation objects are realized.
 TODO:
 
  * Represent Size, weight, etc
- * Represent time 
+ * Represent time
  * Represent part/whole relation (CCO depicted and museum object)
  * Represent Story/narrative
  * Represent generated comments by other users
