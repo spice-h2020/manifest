@@ -1,7 +1,7 @@
 {
   "@id": "ex:dmh_ig_kulutuksentallentajat",
   "@type":"ScriptExecution",
-  "_label":"Social Media Campaign on Instagram of the Design Museum of Helsinki #kulutuksentallentajat"
+  "_label":"Social Media Campaign on Instagram of the Design Museum of Helsinki #kulutuksentallentajat",
   "satisfies":"spice:00001_script",
   "occurs_within":"ex:kulutuksentallentajat",
   "includes":[
@@ -12,7 +12,7 @@
       "location":"remote",
       "setting":"instagram_campaign",
       "role_in_time": {
-        "@id": "ex:dmh_ig_curator_selecting"
+        "@id": "ex:dmh_ig_curator_selecting",
         "@type":"RoleInTime",
         "of_agent":"ex:dmh_curator_0",
         "with_role":"curator",
