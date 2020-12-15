@@ -1,0 +1,163 @@
+{
+  "@id": "spice:00001_script",
+  "_label": "Script for a social media campaign",
+  "@type":"Script",
+  "purpose": [
+    {
+    "@id":"engagement",
+    "@type":"Goal"
+    },
+    {
+      "@id":"expressing",
+      "@type":"Goal"
+    },
+    {
+      "@id":"interaction",
+      "@type":"Goal"
+    }
+  ],
+  "stage": [
+    {
+      "@id": "spice:00001_preparation",
+      "@type":"Stage",
+      "_label": "Preparation of the social media campaign",
+      "task": [
+        {
+          "@id": "spice:00001_artefact_selection",
+          "@type":"Task",
+          "_label": "Selection of the artefact to be used in the social media campaign",
+          "precedes":"spice:00001_launch",
+          "task_role":"curator",
+          "input": {
+            "@id": "spice:00001_artefact",
+            "belongs_to":"Artefact"
+          },
+          "output": {
+            "@id": "spice:00001_image",
+            "belongs_to":"Image"
+          }
+        },
+        {
+          "@id": "spice:00001_launch",
+          "@type":"Task",
+          "_label": "Curators announce on the social media the launch of the social media campaign",
+          "precedes":"spice:00001_smm_stories",
+          "follows":"spice:00001_artefact_selection",
+          "task_role":["curator","social_media_manager"],
+          "input": {
+            "@id": "spice:00001_image",
+            "belongs_to":"Image"
+          },
+          "output": {
+            "@id": "spice:00001_cur_web_content",
+            "belongs_to":"WebContent"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "spice:00001_running",
+      "@type":"Stage",
+      "_label": "Running of the social media campaign",
+      "task": [
+        {
+          "@id": "spice:00001_smm_stories",
+          "@type":"Task",
+          "_label": "Social media managers publish exemplar stories on the social media platform",
+          "follows":"spice:00001_launch",
+          "precedes":"spice:00001_user_stories",
+          "task_role":"social_media_manager",
+          "input": {
+            "@id": "spice:00001_smm_image",
+            "belongs_to":"Image"
+          },
+          "output": {
+            "@id": "spice:00001_smm_web_content",
+            "belongs_to":"WebContent"
+          }
+        },
+        {
+          "@id": "spice:00001_user_stories",
+          "@type":"Task",
+          "_label": "Social media users publish their stories (including texts, tags, and images) on the social media platform",
+          "precedes":"spice:00001_cur_selection",
+          "follows":"spice:00001_smm_stories",
+          "task_role":"social_media_user",
+          "input": [{
+            "@id": "spice:00001_cur_web_content",
+            "belongs_to":"WebContent"
+            },
+            {
+              "@id": "spice:00001_smm_web_content",
+              "belongs_to":"WebContent"
+            }
+          ],
+          "output": {
+            "@id": "spice:00001_user_web_content",
+            "belongs_to":"WebContent"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "spice:00001_analysis",
+      "@type":"Stage",
+      "_label": "Analysis of results the social media campaign",
+      "task": [
+        {
+          "@id": "spice:00001_cur_selection",
+          "@type":"Task",
+          "_label": "Curators select users' stories to be included in their collection",
+          "precedes":"spice:00001_dev_analysis",
+          "follows":"spice:00001_user_stories",
+          "task_role":"curator",
+          "input": {
+            "@id": "spice:00001_user_web_content",
+            "belongs_to":"WebContent"
+          },
+          "output": {
+            "@id": "spice:00001_selected_user_story",
+            "belongs_to":"WebContent"
+          }
+        },
+        {
+          "@id": "spice:00001_dev_analysis",
+          "@type":"Task",
+          "_label": "Developers annotate selected stories with emotions and the artefact depicted in the image (part of the user story).",
+          "precedes":"spice:00001_cur_presentation",
+          "follows":"spice:00001_cur_selection",
+          "task_role":"developer",
+          "input": {
+            "@id": "spice:00001_selected_user_story",
+            "belongs_to":"WebContent"
+            },
+          "output": {
+            "@id": "spice:00001_us_annotation"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "spice:00001_presentation",
+      "@type":"Stage",
+      "_label": "Presentation of results of the social media campaign",
+      "task":
+        {
+          "@id": "spice:00001_cur_presentation",
+          "@type":"Task",
+          "_label": "Curators present select users' stories in their online collection",
+          "follows":"spice:00001_dev_analysis",
+          "task_role":"curator",
+          "input": {
+            "@id": "spice:00001_selected_user_story",
+            "belongs_to":"WebContent"
+          },
+          "output": {
+            "@id": "spice:00001_published_user_story",
+            "belongs_to":"WebContent"
+          }
+        }
+    }
+  ],
+  "@context": "https://github.com/spice-h2020/manifest/tree/main/context.json"
+}

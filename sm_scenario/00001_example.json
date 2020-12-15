@@ -1,0 +1,36 @@
+{
+  "@id": "ex:dmh_ig_kulutuksentallentajat",
+  "@type":"ScriptExecution",
+  "_label":"Social Media Campaign on Instagram of the Design Museum of Helsinki #kulutuksentallentajat"
+  "satisfies":"spice:00001_script",
+  "occurs_within":"ex:kulutuksentallentajat",
+  "includes":[
+    {
+      "@id":"ex:dmh_ig_artefact_selection",
+      "@type":"Action",
+      "executes": "spice:00001_artefact_selection",
+      "location":"remote",
+      "setting":"instagram_campaign",
+      "role_in_time": {
+        "@id": "ex:dmh_ig_curator_selecting"
+        "@type":"RoleInTime",
+        "of_agent":"ex:dmh_curator_0",
+        "with_role":"curator",
+        "at_time":"ex:date_18_09_2020"
+      },
+      "at_time":"ex:date_18_09_2020",
+      "used": {
+        "@id":"ex:savoy_vase",
+        "@type":"Artefact",
+        "corresponds_to":"spice:00001_artefact"
+      },
+      "generated":{
+        "@id":"ex:savoy_vase_img_0001",
+        "@type":"Image",
+        "corresponds_to":"spice:00001_image"
+      }
+    }
+  ],
+  "@context": "https://github.com/spice-h2020/manifest/tree/main/context.json"
+
+}

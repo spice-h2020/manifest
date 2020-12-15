@@ -14,7 +14,8 @@ The stages and the activities underlying the citizen curation activity.
 
 **1. Preparation**
 
- * `Activity 1.1` The campaign was launched with a [post](https://www.instagram.com/p/CFKIGypBG7C/) (Fig.1) by DMH curators. The post includes instructions: what to post, what contents to include, which hashtag to use (`#kulutuksentallentajat`), what curators will do with users' stories.
+ * `Activity 1.1` The curators select an artefact to promote the campaign, i.e. the [Savoy vase](https://collection.designmuseum.fi/en/item/aalto-vase)
+ * `Activity 1.2` The campaign is launched with a [post](https://www.instagram.com/p/CFKIGypBG7C/) (Fig.1) by DMH curators. The post includes instructions: what to post, what contents to include, which hashtag to use (`#kulutuksentallentajat`), what curators will do with users' stories.
 
 **2. Running**
 
@@ -23,14 +24,14 @@ The stages and the activities underlying the citizen curation activity.
 
 **3. Analysis**
 
- * `Activity 3.1` Curators *select* users' posts for being included in the museum's collection and to be shown on their Instagram profile.
- * `Activity 3.2` Developers automatically *annotate* selected posts with information about sentiment, emotion, intention, and related museum objects.
+ * `Activity 3.1` Curators *select* users' posts to be included in the museum's collection and to be shown on their Instagram profile.
+ * `Activity 3.2` Developers *annotate* selected posts with information about emotions and related museum objects.
 
 **4. Presentation**
 
- * `Activity 4.1` When the campaign is over, users can *explore* the posts produced by other users and can interact with those by looking at the DMH profile or the list of posts under the suggested hashtag.
+ * `Activity 4.1` When the campaign is over, users can *explore* the posts produced by other users and can interact with those - by looking at the DMH profile or at the list of posts under the suggested hashtag.
 
-![](dmh_ig.jpg)
+![](img/dmh_ig.jpg)
 
 *Fig. 1 Curators' launching post*
 
@@ -46,7 +47,6 @@ The stages and the activities underlying the citizen curation activity.
 >
 > With the contemporary documentation trick, museums want to present and promote contemporary recording as part of their collection work. The capture is organized by the museums' national recording and collection cooperation network TAKO.
 
-
 ### The user story
 
 `#1 User's story`
@@ -54,7 +54,7 @@ The stages and the activities underlying the citizen curation activity.
  * Elina mentions that she is participating to the campaign.
  * She recalls her memory about the vase: how she got it, where it has been placed over time, what was its function over time, and where it is now. The story of the vase is a metaphor of her life.
 
-![](us_ig.jpg)
+![](img/us_ig.jpg)
 
 *Fig. 2 User's story*
 
@@ -76,15 +76,15 @@ The stages and the activities underlying the citizen curation activity.
 > @takoverkosto
 > #takoverkosto
 
-### Manifests
+### Manifest and script
 
-Reused ontologies: [PROV](http://www.w3.org/TR/prov-o/), [P-PLAN](http://purl.org/net/p-plan#), [DBPedia](http://dbpedia.org/ontology/)
+ * [CCO example (JSON-LD)](https://github.com/spice-h2020/manifest/tree/main/sm_scenario/00001_example.json) A manifest for the Citizen Curation activities related to the social media campaign.
+ * [Script (JSON-LD)](https://github.com/spice-h2020/manifest/tree/main/sm_scenario/00001_script.json) The description of the script used for the activities at hand.
+ * [context.json](https://github.com/spice-h2020/manifest/tree/main/context.json) The ontology specification for representing both CCO and scripts.
 
-Context: [context.json](https://github.com/spice-h2020/manifest/tree/main/context.json)
+Reused ontologies: [SPICE - Scripting module](https://w3id.org/spice/SON/scripting) - aligned to: [PROV](http://www.w3.org/TR/prov-o/), [P-PLAN](http://purl.org/net/p-plan#), [DBPedia](http://dbpedia.org/ontology/), [DOLCE](http://www.ontologydesignpatterns.org/ont/dul/DUL.owl)
 
-Complete JSON-LD example: [example](https://github.com/spice-h2020/manifest/tree/main/sm_scenario/sm_scenario.json)
-
-#### Citizen Curation activity
+<!-- #### Citizen Curation activity
 
 A **Citizen Curation activity** is a set of activities wherein citizens interact with artefacts and people and produce citizen curation objects (to be defined). This activity is characterised by a *setting* (including *technical requirements*), a *purpose*, and a number of sequential *stages*.
 
@@ -288,7 +288,7 @@ A script can be represented as a sequence of general steps, having input and out
 Questions
 
  * Do we need to annotate activities (or scripts) as part of a certain stage?
- * Do we want to specify the type `Plan` in subclasses?
+ * Do we want to specify the type `Plan` in subclasses? e.g. `PreparationPlan`
  * What is the best way to represent input and output values in the scripts? Should a script reference the general concepts (classes or individuals representing an abstract concept, e.g. select an "Artefact", or the specific inputs/outputs, e.g. select "ex:savoy_vase"?
  * So far, scripts reference general concepts, activities reference specific individuals. What if activities having several steps take different inputs and generated different outputs for each step?
 
@@ -346,4 +346,4 @@ TODO:
  * Represent time
  * Represent part/whole relation (CCO depicted and museum object)
  * Represent Story/narrative
- * Represent generated comments by other users
+ * Represent generated comments by other users -->
