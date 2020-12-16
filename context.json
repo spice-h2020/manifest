@@ -5,8 +5,13 @@
   "rdfs":"http://www.w3.org/2000/01/rdf-schema#",
 
   "Artefact":"ex:Artefact",
+  "Emotion":"ex:Emotion",
   "Image":"ex:Image",
   "WebContent":"ex:WebContent",
+  "Text":"ex:Text",
+  "web_content":"ex:web_content",
+  "content":"ex:content",
+  "annotated_emotion":"ex:emotion",
 
   "Action":"script:Action",
   "RoleInTime":"script:RoleInTime",
@@ -37,7 +42,11 @@
 
   "curator":"spice:curator",
   "developer":"spice:developer",
+  "annotator":"spice:annotator",
+  "publisher":"spice:publisher",
+  "selector":"spice:selector",
   "instagram_campaign":"spice:instagram_campaign",
+  "emotion_annotation":"spice:emotion_annotation",
   "remote":"spice:remote",
   "social_media_manager":"spice:social_media_manager",
   "social_media_user":"spice:social_media_user",

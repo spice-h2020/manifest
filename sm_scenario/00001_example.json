@@ -11,6 +11,7 @@
       "executes": "spice:00001_artefact_selection",
       "location":"remote",
       "setting":"instagram_campaign",
+      "at_time":"ex:date_18_09_2020",
       "role_in_time": {
         "@id": "ex:dmh_ig_curator_selecting",
         "@type":"RoleInTime",
@@ -18,7 +19,6 @@
         "with_role":"curator",
         "at_time":"ex:date_18_09_2020"
       },
-      "at_time":"ex:date_18_09_2020",
       "used": {
         "@id":"ex:savoy_vase",
         "@type":"Artefact",
@@ -29,6 +29,158 @@
         "@type":"Image",
         "corresponds_to":"spice:00001_image"
       }
+    },
+    {
+      "@id":"ex:dmh_ig_post_launch",
+      "@type":"Action",
+      "executes": "spice:00001_launch",
+      "location":"remote",
+      "setting":"instagram_campaign",
+      "at_time":"ex:date_18_09_2020",
+      "role_in_time": {
+        "@id": "ex:dmh_ig_curator_posting",
+        "@type":"RoleInTime",
+        "of_agent":"ex:dmh_curator_0",
+        "with_role":["publisher","curator"],
+        "at_time":"ex:date_18_09_2020"
+      },
+      "used": {
+        "@id":"ex:savoy_vase_img_0001",
+        "@type":"Image",
+        "corresponds_to":"spice:00001_image"
+      },
+      "generated":{
+        "@id":"ex:ig_launch_post_0001",
+        "@type":"WebContent",
+        "corresponds_to":"spice:00001_cur_web_content",
+        "web_content":"https://www.instagram.com/p/CFKIGypBG7C/"
+      }
+    },
+    {
+      "@id":"ex:dmh_ig_smm_example_post",
+      "@type":"Action",
+      "executes": "spice:00001_smm_stories",
+      "location":"remote",
+      "setting":"instagram_campaign",
+      "at_time":"ex:date_18_09_2020",
+      "role_in_time": {
+        "@id": "ex:dmh_ig_smm_posting",
+        "@type":"RoleInTime",
+        "of_agent":"ex:dmh_smm_0",
+        "with_role":["publisher","social_media_manager"],
+        "at_time":"ex:date_18_09_2020"
+      },
+      "used": [
+        {
+          "@id":"ex:savoy_vase_img_0002",
+          "@type":"Image",
+          "corresponds_to":"spice:00001_smm_image"
+        },
+        {
+          "@id":"ex:savoy_vase_text_0002",
+          "@type":"Text",
+          "corresponds_to":"spice:00001_smm_text"
+        }
+      ],
+      "generated":{
+        "@id":"ex:ig_smm_post_0001",
+        "@type":"WebContent",
+        "corresponds_to":"spice:00001_smm_web_content",
+        "web_content":""
+      }
+    },
+    {
+      "@id":"ex:dmh_ig_user_post_0001",
+      "@type":"Action",
+      "executes": "spice:00001_user_stories",
+      "location":"remote",
+      "setting":"instagram_campaign",
+      "at_time":"ex:date_18_09_2020",
+      "role_in_time": {
+        "@id": "ex:dmh_ig_user_01_posting",
+        "@type":"RoleInTime",
+        "of_agent":"ex:user_01",
+        "with_role":["publisher","social_media_user"],
+        "at_time":"ex:date_18_09_2020"
+      },
+      "used": [
+        {
+          "@id":"ex:user_img_0001",
+          "@type":"Image",
+          "corresponds_to":"spice:00001_user_img"
+        },
+        {
+          "@id":"ex:user_text_0001",
+          "@type":"Text",
+          "corresponds_to":"spice:00001_user_text"
+        }
+      ],
+      "generated":{
+        "@id":"ex:ig_user_post_0001",
+        "@type":"WebContent",
+        "corresponds_to":"spice:00001_user_web_content",
+        "web_content":"https://www.instagram.com/p/CFRCOXjBBDB/""
+      }
+    },
+    {
+      "@id":"ex:dmh_ig_cur_selection",
+      "@type":"Action",
+      "executes": "spice:00001_cur_selection",
+      "location":"remote",
+      "setting":"instagram_campaign",
+      "at_time":"ex:date_20_09_2020",
+      "role_in_time": {
+        "@id": "ex:dmh_ig_cur_01_select",
+        "@type":"RoleInTime",
+        "of_agent":"ex:dmh_curator_1",
+        "with_role":["selector","curator"],
+        "at_time":"ex:date_20_09_2020"
+      },
+      "used": [
+        {
+          "@id":"ex:ig_user_post_0001",
+          "@type":"WebContent",
+          "corresponds_to":"spice:00001_user_web_content"
+        }
+      ],
+      "generated":[{
+        "@id":"ex:ig_user_post_0001",
+        "@type":"WebContent",
+        "corresponds_to":"spice:00001_selected_user_story",
+        "web_content":"https://www.instagram.com/p/CFRCOXjBBDB/""
+      }]
+    },
+    {
+      "@id":"ex:dmh_ig_dev_annotation",
+      "@type":"Action",
+      "executes": "spice:00001_dev_annotation",
+      "location":"remote",
+      "setting":"emotion_annotation",
+      "at_time":"ex:date_22_09_2020",
+      "role_in_time": {
+        "@id": "ex:spice_dev_01_annotation",
+        "@type":"RoleInTime",
+        "of_agent":"ex:spice_dev_1",
+        "with_role":["developer","annotator"],
+        "at_time":"ex:date_22_09_2020"
+      },
+      "used": [
+        {
+          "@id":"ex:ig_user_post_0001",
+          "@type":"WebContent",
+          "corresponds_to":"spice:00001_selected_user_story"
+        }
+      ],
+      "generated":[{
+        "@id":"ex:user_content_01_dev_annotation",
+        "@type":"Emotion",
+        "corresponds_to":"spice:00001_dev_annotation",
+        "annotated_emotion":["ex:happiness","ex:joy"]
+      }]
+    },
+    {
+      "@id":"ex:dmh_ig_cur_presentation",
+      "@type":"Action"
     }
   ],
   "@context": "https://github.com/spice-h2020/manifest/tree/main/context.json"

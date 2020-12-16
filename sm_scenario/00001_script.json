@@ -67,10 +67,16 @@
           "follows":"spice:00001_launch",
           "precedes":"spice:00001_user_stories",
           "task_role":"social_media_manager",
-          "input": {
+          "input": [
+            {
             "@id": "spice:00001_smm_image",
             "belongs_to":"Image"
-          },
+            },
+            {
+            "@id": "spice:00001_smm_text",
+            "belongs_to":"Text"
+            }
+          ],
           "output": {
             "@id": "spice:00001_smm_web_content",
             "belongs_to":"WebContent"
@@ -84,12 +90,12 @@
           "follows":"spice:00001_smm_stories",
           "task_role":"social_media_user",
           "input": [{
-            "@id": "spice:00001_cur_web_content",
-            "belongs_to":"WebContent"
+            "@id": "spice:00001_user_img",
+            "belongs_to":"Image"
             },
             {
-              "@id": "spice:00001_smm_web_content",
-              "belongs_to":"WebContent"
+              "@id": "spice:00001_user_text",
+              "belongs_to":"Text"
             }
           ],
           "output": {
@@ -121,9 +127,9 @@
           }
         },
         {
-          "@id": "spice:00001_dev_analysis",
+          "@id": "spice:00001_dev_annotation",
           "@type":"Task",
-          "_label": "Developers annotate selected stories with emotions and the artefact depicted in the image (part of the user story).",
+          "_label": "Developers annotate selected stories with emotions.",
           "precedes":"spice:00001_cur_presentation",
           "follows":"spice:00001_cur_selection",
           "task_role":"developer",
@@ -132,7 +138,8 @@
             "belongs_to":"WebContent"
             },
           "output": {
-            "@id": "spice:00001_us_annotation"
+            "@id": "spice:00001_dev_annotation",
+            "belongs_to":"Emotion"
           }
         }
       ]
