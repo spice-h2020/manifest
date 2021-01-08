@@ -114,7 +114,7 @@
       "_label": "Preliminary analysis for classification purposes",
       "task": [
         {
-          "@id": "spice:00002_curators_selection_visitor_opinions"
+          "@id": "spice:00002_curators_selection_visitor_opinions",
           "@type":"Task",
           "_label": "The curators prepare a collection of visitors' opinions to be shown during the exhibition.",
           "precedes":"spice:00002_preliminary_user_model",
@@ -150,7 +150,7 @@
           }
         },
         {
-          "@id": "spice:00002_developers_selection_visitor_opinions"
+          "@id": "spice:00002_developers_selection_visitor_opinions",
           "@type":"Task",
           "_label": "The developers prepare a collection of visitors' opinions and backup curators' descriptions to be shown during the exhibition according to the user model.",
           "precedes":"spice:00002_user_login",
