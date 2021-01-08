@@ -1,14 +1,24 @@
 "@context": {
+  "aff":"https://w3id.org/spice/SON/affordance/",
   "ex":"https://w3id.org/spice/SON/undefined/",
   "script":"https://w3id.org/spice/SON/scripting/",
   "spice": "https://w3id.org/spice/manifest/",
   "rdfs":"http://www.w3.org/2000/01/rdf-schema#",
 
+  "Affordance":"aff:Affordance",
+  "affordance":"aff:hasAffordance",
+  "holds":"aff:holds",
+
   "Artefact":"ex:Artefact",
+  "Device":"ex:Device",
+  "Email":"ex:Email",
   "Emotion":"ex:Emotion",
   "Image":"ex:Image",
+  "ImageCollection":"ex:ImageCollection",
   "WebContent":"ex:WebContent",
   "Text":"ex:Text",
+  "Algorithm": "ex:Algorithm",
+
   "web_content":"ex:web_content",
   "content":"ex:content",
   "annotated_emotion":"ex:emotion",
@@ -22,13 +32,20 @@
   "Task":"script:Task",
 
   "at_time":"script:hasTimeInterval",
+  "conditional_input":"script:hasConditionalInput",
+  "conditional_output":"script:hasConditionalOutput",
+  "conditional_precedes":"script:conditionalPrecedes",
+  "conditional_follows":"script:conditionalFollows",
   "corresponds_to":"script:correspondsTo",
-  "executes":"executesTask",
+  "executes":"script:executesTask",
   "follows":"script:follows",
   "generated":"script:generated",
   "includes":"script:includesAction",
+  "involves":"script:involves",
+  "input":"script:hasInput",
   "occurs_within":"script:occursWithin",
   "of_agent":"script:isRoleInTimeOf",
+  "output":"script:hasOutput",
   "precedes":"script:precedes",
   "purpose":"script:hasPurpose",
   "role_in_time":"script:hasRoleInTime",
@@ -41,6 +58,7 @@
 
 
   "curator":"spice:curator",
+  "visitor":"spice:museum_visitor",
   "developer":"spice:developer",
   "annotator":"spice:annotator",
   "publisher":"spice:publisher",
@@ -50,9 +68,12 @@
   "remote":"spice:remote",
   "social_media_manager":"spice:social_media_manager",
   "social_media_user":"spice:social_media_user",
+
   "engagement": "spice:engagement",
   "expressing":"spice:expressing",
   "interaction":"spice:interaction",
+  "view_opinions": "spice:view_opinions",
+  "reflection":"spice:reflection",
 
   "comment":"rdfs:comment",
   "_label":"rdfs:label"

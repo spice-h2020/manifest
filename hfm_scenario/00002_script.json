@@ -1,0 +1,605 @@
+{
+  "@id": "spice:00002_script",
+  "_label": "Script to elicit opinions on a theme during a museum exhibition",
+  "@type":"Script",
+  "purpose": [
+    {
+      "@id":"expressing",
+      "@type":"Goal"
+    },
+    {
+      "@id":"view_opinions",
+      "@type":"Goal"
+    },
+    {
+      "@id":"reflection",
+      "@type":"Goal"
+    }
+  ],
+  "stage": [
+    {
+      "@id": "spice:00002_preparation",
+      "@type":"Stage",
+      "_label": "Preparation of preliminary materials (including questionnaire, videos, questions)",
+      "task": [
+        {
+          "@id": "spice:00002_questionnaire_preparation",
+          "@type":"Task",
+          "_label": "Curators prepare the preliminary questionnaire for the visitors",
+          "precedes":"spice:00002_questionnaire_filling",
+          "task_role":"curator",
+          "output": {
+            "@id": "spice:00002_questionnaire",
+            "belongs_to":"Text"
+          }
+        },
+        {
+          "@id": "spice:00002_questionnaire_filling",
+          "@type":"Task",
+          "_label": "The visitor answers the preliminary questionnaire",
+          "precedes":"spice:00002_material_preparation_room_0",
+          "task_role":"visitor",
+          "input": {
+            "@id": "spice:00002_questionnaire",
+            "belongs_to":"Text"
+          },
+          "output": {
+            "@id": "spice:00002_user_questionnaire_answer",
+            "belongs_to":"Text"
+          }
+        },
+        {
+          "@id": "spice:00002_material_preparation_room_0",
+          "@type":"Task",
+          "_label": "The curators prepare a video and questions to be prompt on a device in room #0 of the exhibition",
+          "precedes":"spice:00002_profiled_material_preparation_room_1",
+          "task_role":"curator",
+          "output": [
+            {
+              "@id": "spice:00002_video_room_0",
+              "belongs_to":"Video"
+            },
+            {
+              "@id": "spice:00002_question_1_room_0",
+              "_label":"Which point of view do you relate to?",
+              "belongs_to":"Text"
+            },
+            {
+              "@id": "spice:00002_question_2_room_0",
+              "_label":"Why don't you agree with any point of view?",
+              "belongs_to":"Text"
+            },
+            {
+              "@id": "spice:00002_question_3_room_0",
+              "_label":"If you register your email you'll get a memento/souvenir at the end of the visit. Would you like to register?",
+              "belongs_to":"Text"
+            },
+            {
+              "@id": "spice:00002_question_1_room_1",
+              "_label":"Did you like the video?",
+              "belongs_to":"Text"
+            },
+            {
+              "@id": "spice:00002_question_2_room_1",
+              "_label":"What do you think about the issue?",
+              "belongs_to":"Text"
+            },
+            {
+              "@id": "spice:00002_question_3_room_1",
+              "_label":"What do you think about the opinions?",
+              "belongs_to":"Text"
+            }
+          ]
+        },
+        {
+          "@id": "spice:00002_profiled_material_preparation_room_1",
+          "@type":"Task",
+          "_label": "The developers and curators select videos to be shown in room #1 according to the user model",
+          "precedes":"spice:00002_curators_selection_visitor_opinions",
+          "task_role":["developer","curator"],
+          "input": {
+            "@id": "spice:00002_preliminary_user_profile",
+            "belongs_to":"Algorithm"
+          },
+          "output": {
+            "@id": "spice:00002_video_1_room_1",
+            "belongs_to":"Video"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "spice:00002_preliminary_analysis",
+      "@type":"Stage",
+      "_label": "Preliminary analysis for classification purposes",
+      "task": [
+        {
+          "@id": "spice:00002_curators_selection_visitor_opinions"
+          "@type":"Task",
+          "_label": "The curators prepare a collection of visitors' opinions to be shown during the exhibition.",
+          "precedes":"spice:00002_preliminary_user_model",
+          "task_role":"curator",
+          "input": {
+            "@id": "spice:00002_user_questionnaire_answer",
+            "belongs_to":"Text"
+          },
+          "output": {
+            "@id": "spice:00002_curators_collection_visitor_opinions",
+            "belongs_to":"Artefact"
+          }
+        },
+        {
+          "@id": "spice:00002_preliminary_user_model",
+          "@type":"Task",
+          "_label": "The developers process the answer to the questionnaire and elaborate a preliminary User Model",
+          "precedes":"spice:00002_developers_selection_visitor_opinions",
+          "task_role":"developer",
+          "input": [
+            {
+              "@id": "spice:00002_user_questionnaire_answer",
+              "belongs_to":"Text"
+            },
+            {
+              "@id": "spice:00002_user_model",
+              "belongs_to":"Algorithm"
+            }
+          ],
+          "output": {
+            "@id": "spice:00002_preliminary_user_profile",
+            "belongs_to":"Algorithm"
+          }
+        },
+        {
+          "@id": "spice:00002_developers_selection_visitor_opinions"
+          "@type":"Task",
+          "_label": "The developers prepare a collection of visitors' opinions and backup curators' descriptions to be shown during the exhibition according to the user model.",
+          "precedes":"spice:00002_user_login",
+          "task_role":"developer",
+          "input": [
+            {
+              "@id": "spice:00002_collection_visitor_opinions",
+              "belongs_to":"TextCollection"
+            },
+            {
+              "@id": "spice:00002_collection_curator_opinions",
+              "belongs_to":"TextCollection"
+            }
+          ],
+          "output": [
+            {
+              "@id": "spice:00002_dev_collection_visitor_opinions",
+              "belongs_to":"TextCollection"
+            },
+            {
+              "@id": "spice:00002_dev_collection_curator_opinions",
+              "belongs_to":"TextCollection"
+            }
+          ]
+        }
+
+      ]
+    },
+    {
+      "@id": "spice:00002_introductory_running",
+      "@type":"Stage",
+      "_label": "User/device interactions during before entering the exhibition",
+      "task": [
+        {
+          "@id": "spice:00002_user_login",
+          "@type":"Task",
+          "_label": "The visitor selects an avatar and a pseudo name",
+          "precedes":"spice:00002_video_presentation_room_0",
+          "task_role":"visitor",
+          "involves": {
+            "@id": "spice:00002_device",
+            "belongs_to":"Device"
+          },
+          "input": {
+            "@id": "spice:00002_avatars_list",
+            "belongs_to":"ImageCollection"
+          },
+          "output": [
+            {
+              "@id": "spice:00002_user_avatar",
+              "belongs_to":"Image"
+            },
+            {
+              "@id": "spice:00002_user_pseudonym",
+              "belongs_to":"Text"
+            }
+          ]
+        },
+        {
+          "@id": "spice:00002_video_presentation_room_0",
+          "@type":"Task",
+          "_label": "The visitor watches an introductory video",
+          "precedes":"spice:00002_video_feedback_1_request_room_0",
+          "task_role":"visitor",
+          "involves": {
+            "@id": "spice:00002_device",
+            "belongs_to":"Device"
+          },
+          "input": {
+            "@id": "spice:00002_video_room_0",
+            "belongs_to":"Video"
+          }
+        },
+        {
+          "@id": "spice:00002_video_feedback_1_request_room_0",
+          "@type":"Task",
+          "_label": "The visitor is requested to give a feedback",
+          "conditional_precedes":[
+            "spice:00002_video_feedback_2_request_room_0",
+            "spice:00002_registration_room_0"
+          ],
+          "task_role":"visitor",
+          "involves": {
+            "@id": "spice:00002_device",
+            "belongs_to":"Device"
+          },
+          "input": [
+            {
+              "@id": "spice:00002_question_1_room_0",
+              "_label":"Which point of view do you relate to?",
+              "belongs_to":"Text"
+            },
+            {
+              "@id": "spice:00002_selection_1_room_0",
+              "belongs_to":"Text"
+            },
+            {
+              "@id": "spice:00002_selection_2_room_0",
+              "belongs_to":"Text"
+            },
+            {
+              "@id": "spice:00002_selection_3_room_0",
+              "belongs_to":"Text"
+            },
+            {
+              "@id": "spice:00002_selection_4_room_0",
+              "belongs_to":"Text"
+            }
+          ],
+          "conditional_output": {
+            "@id": "spice:00002_answer_1_room_0",
+            "belongs_to":"Text"
+          }
+        },
+        {
+          "@id": "spice:00002_video_feedback_2_request_room_0",
+          "@type":"Task",
+          "_label": "The visitor refused to select an answer the prior question and is requested to give a different feedback",
+          "precedes":"spice:00002_registration_room_0",
+          "task_role":"visitor",
+          "involves": {
+            "@id": "spice:00002_device",
+            "belongs_to":"Device"
+          },
+          "affordance": {
+            "@id": "spice:00002_selection_answer_1_room_0",
+            "@type": "Affordance",
+            "holds": "spice:selection"
+          },
+          "input": {
+            "@id": "spice:00002_question_2_room_0",
+            "_label":"Why don't you agree with any point of view?",
+            "belongs_to":"Text"
+          },
+          "conditional_output": {
+            "@id": "spice:00002_answer_2_room_0",
+            "belongs_to":"Text"
+          }
+        },
+        {
+          "@id": "spice:00002_registration_room_0",
+          "@type":"Task",
+          "_label": "The visitor is asked to register by submitting their email.",
+          "precedes":"spice:00002_opinions_exhibition_room_1",
+          "task_role":"visitor",
+          "involves": {
+            "@id": "spice:00002_device",
+            "belongs_to":"Device"
+          },
+          "input": {
+            "@id": "spice:00002_question_3_room_0",
+            "_label":"If you register your email you'll get a memento/souvenir at the end of the visit. Would you like to register?",
+            "belongs_to":"Text"
+          },
+          "conditional_output": {
+            "@id": "spice:00002_user_email",
+            "belongs_to":"Email"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "spice:00002_presentation",
+      "@type":"Stage",
+      "_label": "An exhibit on statements of previous visitors",
+      "task": [
+        {
+          "@id":"00002_opinions_exhibition_room_1",
+          "_label": "An exhibit on statements of previous visitors is shown to the visitor",
+          "precedes":"spice:00002_avatar_selection_room_1",
+          "task_role":"visitor",
+          "involves": {
+            "@id":"spice:00002_curators_collection_visitor_opinions",
+            "belongs_to":"Artefact"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "spice:00002_running",
+      "@type":"Stage",
+      "_label": "User/device interactions during the exhibition",
+      "task": [
+        {
+          "@id": "spice:00002_avatar_selection_room_1",
+          "@type":"Task",
+          "_label": "The visitor enters room #1, where there is the marquee of visitors' opinions. The visitor approaches the tablet and selects her avatar.",
+          "precedes":"spice:00002_video_presentation_room_1",
+          "task_role":"visitor",
+          "involves": {
+            "@id": "spice:00002_device",
+            "belongs_to":"Device"
+          },
+          "input": {
+              "@id": "spice:00002_marquee_room_1",
+              "belongs_to":"Artefact"
+          }
+        },
+        {
+          "@id": "spice:00002_video_presentation_room_1",
+          "@type":"Task",
+          "_label": "The visitor watches a video selected on the basis of their profile.",
+          "precedes":"spice:00002_video_feedback_1_request_room_1",
+          "task_role":"visitor",
+          "involves": {
+            "@id": "spice:00002_device",
+            "belongs_to":"Device"
+          },
+          "input": {
+              "@id": "spice:00002_video_1_room_1",
+              "belongs_to":"Video"
+          }
+        },
+        {
+          "@id": "spice:00002_video_feedback_1_request_room_1",
+          "@type":"Task",
+          "_label": "The visitor is requested to give a feedback on the video.",
+          "precedes": "spice:00002_video_feedback_2_request_room_1",
+          "task_role":"visitor",
+          "involves": {
+            "@id": "spice:00002_device",
+            "belongs_to":"Device"
+          },
+          "input": [
+            {
+              "@id": "spice:00002_video_1_room_1",
+              "belongs_to":"Video"
+            },
+            {
+              "@id": "spice:00002_question_1_room_1",
+              "_label":"Did you like the video?",
+              "belongs_to":"Text"
+            },
+            {
+              "@id": "spice:00002_selection_1_room_1",
+              "_label":"Yes",
+              "belongs_to":"Text"
+            },
+            {
+              "@id": "spice:00002_selection_2_room_1",
+              "_label":"No",
+              "belongs_to":"Text"
+            }
+          ],
+          "conditional_output": {
+            "@id": "spice:00002_answer_1_room_1",
+            "belongs_to":"Text"
+          }
+        },
+        {
+          "@id": "spice:00002_video_feedback_2_request_room_1",
+          "@type":"Task",
+          "_label": "The visitor is requested to give a feedback on the issue at hand.",
+          "conditional_precedes": [
+            "spice:00002_video_feedback_3_request_room_1",
+            "spice:00002_opinions_presentation_room_1",
+            "spice:00002_curators_presentation_room_1"
+          ],
+          "task_role":"visitor",
+          "involves": {
+            "@id": "spice:00002_device",
+            "belongs_to":"Device"
+          },
+          "input": {
+            "@id": "spice:00002_question_2_room_1",
+            "_label":"What do you think about the issue?",
+            "belongs_to":"Text"
+          },
+          "conditional_output": {
+            "@id": "spice:00002_answer_2_room_1",
+            "belongs_to":"Text"
+          }
+        },
+        {
+          "@id": "spice:00002_video_feedback_3_request_room_1",
+          "@type":"Task",
+          "_label": "The visitor did not answer the prior question and is requested to give a feedback on the exhibits.",
+          "conditional_precedes": [
+            "spice:00002_opinions_presentation_room_1",
+            "spice:00002_curators_presentation_room_1"
+          ],
+          "task_role":"visitor",
+          "involves": {
+            "@id": "spice:00002_device",
+            "belongs_to":"Device"
+          },
+          "affordance": {
+            "@id": "spice:00002_no_answer_2_room_1",
+            "@type": "Affordance",
+            "holds": "spice:no_answer_given"
+          },
+          "input": {
+            "@id": "spice:00002_question_3_room_1",
+            "_label":"What do you think about the exhibit?",
+            "belongs_to":"Text"
+          },
+          "conditional_output": {
+            "@id": "spice:00002_answer_3_room_1",
+            "belongs_to":"Text"
+          }
+        },
+        {
+          "@id": "spice:00002_opinions_presentation_room_1",
+          "@type":"Task",
+          "_label": "The visitor reads on the device other visitors' opinions based on their user profiling.",
+          "precedes": "spice:00002_video_feedback_4_request_room_1",
+          "task_role":"visitor",
+          "affordance": {
+            "@id": "spice:00002_user_profiled_room_1",
+            "@type": "Affordance",
+            "holds": "spice:user_profiled"
+          },
+          "involves": {
+            "@id": "spice:00002_device",
+            "belongs_to":"Device"
+          },
+          "input": [
+            {
+              "@id": "spice:00002_preliminary_user_profile",
+              "belongs_to":"Algorithm"
+            },
+            {
+              "@id": "spice:00002_dev_collection_curator_opinions",
+              "belongs_to":"TextCollection"
+            }
+          ]
+        },
+        {
+          "@id": "spice:00002_opinions_presentation_room_1",
+          "@type":"Task",
+          "_label": "The visitor reads on the device other curators'.",
+          "precedes": "spice:00002_video_feedback_4_request_room_1",
+          "task_role":"visitor",
+          "affordance": {
+            "@id": "spice:00002_no_user_profiled_room_1",
+            "@type": "Affordance",
+            "holds": "spice:no_user_profiled"
+          },
+          "involves": {
+            "@id": "spice:00002_device",
+            "belongs_to":"Device"
+          },
+          "input": [
+            {
+              "@id": "spice:00002_preliminary_user_profile",
+              "belongs_to":"Algorithm"
+            },
+            {
+              "@id": "spice:00002_dev_collection_visitor_opinions",
+              "belongs_to":"TextCollection"
+            }
+          ]
+        },
+        {
+          "@id": "spice:00002_video_feedback_4_request_room_1",
+          "@type":"Task",
+          "_label": "The visitor is requested to give a feedback on the opinions displayed.",
+          "conditional_precedes": [
+            "spice:00002_video_feedback_5_request_room_1",
+            "spice:00002_video_feedback_6_request_room_1"
+          ],
+          "task_role":"visitor",
+          "involves": {
+            "@id": "spice:00002_device",
+            "belongs_to":"Device"
+          },
+          "input": {
+            "@id": "spice:00002_question_3_room_1",
+            "_label":"What do you think about the opinions?",
+            "belongs_to":"Text"
+          },
+          "conditional_output": {
+            "@id": "spice:00002_answer_3_room_1",
+            "belongs_to":"Text"
+          }
+        },
+        {
+          "@id": "spice:00002_video_feedback_5_request_room_1",
+          "@type":"Task",
+          "_label": "The visitor answers positively and a positive feedback to the answer is shown on the device.",
+          "conditional_precedes": [
+            "spice:00002_email_souvenir_room_1"
+          ],
+          "task_role":"visitor",
+          "involves": {
+            "@id": "spice:00002_device",
+            "belongs_to":"Device"
+          },
+          "input": {
+            "@id": "spice:00002_answer_3_room_1",
+            "belongs_to":"Text"
+          },
+          "output": {
+            "@id": "spice:00002_dev_feedback_1_answer_3_room_1",
+            "belongs_to":"Text"
+          }
+        },
+        {
+          "@id": "spice:00002_video_feedback_6_request_room_1",
+          "@type":"Task",
+          "_label": "The visitor answers negatively and a different feedback to the answer is shown on the device.",
+          "conditional_precedes": [
+            "spice:00002_email_souvenir_room_1"
+          ],
+          "task_role":"visitor",
+          "involves": {
+            "@id": "spice:00002_device",
+            "belongs_to":"Device"
+          },
+          "input": {
+            "@id": "spice:00002_answer_3_room_1",
+            "belongs_to":"Text"
+          },
+          "output": {
+            "@id": "spice:00002_dev_feedback_2_answer_3_room_1",
+            "belongs_to":"Text"
+          }
+        },
+        {
+          "@id": "spice:00002_email_souvenir_room_1",
+          "@type":"Task",
+          "_label": "Since the visitor registered the email, s/he receives an email with a souvenir",
+          "task_role":"visitor",
+          "affordance": {
+            "@id": "spice:00002_user_registration_room_0",
+            "@type": "Affordance",
+            "holds": "spice:no_user_registered"
+          },
+          "involves": {
+            "@id": "spice:00002_device_email",
+            "belongs_to":"Device"
+          },
+          "input": [
+            {
+              "@id": "spice:00002_visitor_souvenir",
+              "belongs_to":"WebContent"
+            },
+            {
+              "@id": "spice:00002_visitor_email",
+              "belongs_to":"WebContent"
+            }
+          ],
+          "output": {
+            "@id": "spice:00002_visitor_email_souvenir",
+            "belongs_to":"WebContent"
+          }
+        }
+      ]
+    }
+  ],
+  "@context": "https://github.com/spice-h2020/manifest/tree/main/context.json"
+}
