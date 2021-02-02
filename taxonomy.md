@@ -15,21 +15,25 @@ Sources:
 A classification of the script on the basis of its purpose and strategies adopted.
 
  * engagement:
-  * tagging
-  * storytelling
+
+    * tagging
+    * storytelling
 
  * expressing:
-  * sharing opinions
-  * sharing opinions within a group or a community
-  * sharing interpretations to family and/or friends
+
+    * sharing opinions
+    * sharing opinions within a group or a community
+    * sharing interpretations to family and/or friends
 
  * interaction:
-  * view interpretations from diverse groups
-  * commenting and receiving
-  * commenting on the interpretations of others
+
+    * view interpretations from diverse groups
+    * commenting and receiving
+    * commenting on the interpretations of others
 
  * reflection:
-  * interpreting?
+
+    * interpreting?
 
 ### Role
 
