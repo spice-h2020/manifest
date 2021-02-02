@@ -322,7 +322,7 @@
           "_label": "An exhibit on statements of previous visitors is shown to the visitor",
           "precedes":"spice:00002_avatar_selection_room_1",
           "task_role":"visitor",
-          "involves": {
+          "input": {
             "@id":"spice:00002_curators_collection_visitor_opinions",
             "belongs_to":"Artefact"
           }
