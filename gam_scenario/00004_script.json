@@ -4,7 +4,7 @@
   "@type":"Script",
   "project": {
     "@id":"spice:00004_script_project",
-    "@type":"StoryBasedNarrativeProject"
+    "@type":"StoryBasedNarrativeProject",
     "purpose": [
       {
         "@id": "spice:00004_user_stories_list",
@@ -40,8 +40,12 @@
           "@id": "spice:00004_artefact_selection",
           "@type":["ArtefactsSelection","MultimediaSelection"],
           "_label": "The curators create a list of pictures of artefacts to be shown to users.",
-          "precedes":"spice:00004_presentation",
-          "task_role":"script:curator",
+          "precedes":{
+            "@id": "spice:00004_presentation"
+          },
+          "task_role": {
+            "@id": "script:curator"
+            },
           "input": {
             "@id": "spice:00004_gam_artefact",
             "belongs_to":"Artefact"
@@ -62,9 +66,9 @@
           "@id": "spice:00004_presentation",
           "@type":"PresentationCuratorialContents",
           "_label": "The web application shows the list of pictures in a random order.",
-          "precedes":"spice:00004_user_picture_selection",
-          "follows":"spice:00004_artefact_selection",
-          "task_role":"script:software-agent",
+          "precedes": {"@id":"spice:00004_user_picture_selection"},
+          "follows":{"@id":"spice:00004_artefact_selection"},
+          "task_role":{"@id":"script:software-agent"},
           "input": {
             "@id": "spice:00004_gam_image",
             "belongs_to":"Photograph"
@@ -74,9 +78,9 @@
           "@id": "spice:00004_user_picture_selection",
           "@type":"MultimediaSelection",
           "_label": "The user may pick 1 picture.",
-          "precedes":"spice:00004_text_answering",
-          "follows":"spice:00004_presentation",
-          "task_role":"script:web-user",
+          "precedes":{"@id":"spice:00004_text_answering"},
+          "follows":{"@id":"spice:00004_presentation"},
+          "task_role":{"@id":"script:web-user"},
           "input": {
             "@id": "spice:00004_gam_image",
             "belongs_to":"Photograph"
@@ -90,9 +94,9 @@
           "@id": "spice:00004_text_answering",
           "@type":"FreeTextAnswering",
           "_label": "The web application prompts three suggestions (templates) to encourage the user writing a story about the selected picture: 'Mi ricorda:' (It reminds me), 'Mi fa sentire:' (It makes me feel), 'Mi fa pensare a:' (It makes me think of). The user may or may not answer.",
-          "precedes":"00004_emoji_answering",
-          "follows":"00004_user_picture_selection",
-          "task_role":"script:web-user",
+          "precedes":{"@id":"spice:00004_emoji_answering"},
+          "follows":{"@id":"spice:00004_user_picture_selection"},
+          "task_role":{"@id":"script:web-user"},
           "input": {
             "@id": "spice:00004_gam_image",
             "belongs_to":"Photograph"
@@ -106,9 +110,9 @@
           "@id": "spice:00004_emoji_answering",
           "@type":"AddEmoticon",
           "_label": "The web application allows the user to add an emoticon related to the selected picture. The user may or may not answer.",
-          "precedes":"spice:00004_hashtag_answering",
-          "follows":"00004_text_answering",
-          "task_role":"script:web-user",
+          "precedes":{"@id":"spice:00004_hashtag_answering"},
+          "follows":{"@id":"spice:00004_text_answering"},
+          "task_role":{"@id":"script:web-user"},
           "input": {
             "@id": "spice:00004_gam_image",
             "belongs_to":"Photograph"
@@ -122,9 +126,9 @@
           "@id": "spice:00004_hashtag_answering",
           "@type":"Tagging",
           "_label": "The web application allows the user to add a list of hashtags related to the selected picture. The user may or may not answer.",
-          "precedes":"00004_picture_recommendation",
-          "follows":"00004_emoji_answering",
-          "task_role":"script:web-user",
+          "precedes":{"@id":"spice:00004_picture_recommendation"},
+          "follows":{"@id":"spice:00004_emoji_answering"},
+          "task_role":{"@id":"script:web-user"},
           "input": {
             "@id": "spice:00004_gam_image",
             "belongs_to":"Photograph"
@@ -138,8 +142,8 @@
           "@id": "spice:00004_picture_recommendation",
           "@type":["Recommendation","ArtefactsSelection"],
           "_label": "The user may select an artefact to be recommended to a friend.",
-          "follows":"00004_hashtag_answering",
-          "task_role":["script:web-user"],
+          "follows":{"@id":"spice:00004_hashtag_answering"},
+          "task_role":{"@id":"script:web-user"},
           "input": {
             "@id": "spice:00004_gam_artefact",
             "belongs_to":"Artefact"
