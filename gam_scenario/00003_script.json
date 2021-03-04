@@ -1,0 +1,152 @@
+{
+  "@id": "spice:00003_script",
+  "_label": "GAM game",
+  "@type":"Script",
+  "project": {
+    "@id":"spice:00003_script_project",
+    "@type":"StoryBasedNarrativeProject"
+    "purpose": [
+      {
+        "@id": "spice:00003_user_stories_list",
+        "@type":"StoryBasedNarrativeList"
+      }
+    ]
+  },
+  "purpose": [
+    {
+      "@id":"script:engagement",
+      "@type":"Goal"
+    },
+    {
+      "@id":"script:self-expression",
+      "@type":"Goal"
+    },
+    {
+      "@id":"script:storytelling",
+      "@type":"Goal"
+    }
+  ],
+  "stage": [
+    {
+      "@id": "spice:00003_preparation",
+      "@type":"Preparation",
+      "_label": "The selection of artefacts.",
+      "task": [
+        {
+          "@id": "spice:00003_artefact_selection",
+          "@type":["ArtefactsSelection","MultimediaSelection"],
+          "_label": "The curators create a list of pictures of artefacts to be shown to users.",
+          "precedes":"spice:00003_presentation",
+          "task_role":"script:curator",
+          "input": {
+            "@id": "spice:00003_gam_artefact",
+            "belongs_to":"Artefact"
+          },
+          "output": {
+            "@id": "spice:00003_gam_image",
+            "belongs_to":"Photograph"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "spice:00003_running",
+      "@type":"Running",
+      "_label": "The activity runs online. Users select pictures of artefacts and contribute with stories",
+      "task": [
+        {
+          "@id": "spice:00003_presentation",
+          "@type":"PresentationCuratorialContents",
+          "_label": "The web application shows the list of pictures in a random order.",
+          "precedes":"spice:00003_user_picture_selection",
+          "follows":"spice:00003_artefact_selection",
+          "task_role":"script:software-agent",
+          "input": {
+            "@id": "spice:00003_gam_image",
+            "belongs_to":"Photograph"
+          }
+        },
+        {
+          "@id": "spice:00003_user_picture_selection",
+          "@type":"MultimediaSelection",
+          "_label": "The user may pick 1 picture.",
+          "precedes":"spice:00003_text_answering",
+          "follows":"spice:00003_presentation",
+          "task_role":"script:web-user",
+          "input": {
+            "@id": "spice:00003_gam_image",
+            "belongs_to":"Photograph"
+          },
+          "conditional_output": {
+            "@id": "spice:00003_gam_image",
+            "belongs_to":"Photograph"
+          }
+        },
+        {
+          "@id": "spice:00003_text_answering",
+          "@type":"FreeTextAnswering",
+          "_label": "The web application prompts three suggestions (templates) to encourage the user writing a story about the selected picture: 'Mi ricorda:' (It reminds me), 'Mi fa sentire:' (It makes me feel), 'Mi fa pensare a:' (It makes me think of). The user may or may not answer.",
+          "precedes":"00003_emoji_answering",
+          "follows":"00003_user_picture_selection",
+          "task_role":"script:web-user",
+          "input": {
+            "@id": "spice:00003_gam_image",
+            "belongs_to":"Photograph"
+          },
+          "conditional_output": {
+            "@id": "spice:00003_user_text",
+            "belongs_to":"Text"
+          }
+        },
+        {
+          "@id": "spice:00003_emoji_answering",
+          "@type":"AddEmoticon",
+          "_label": "The web application allows the user to add an emoticon related to the selected picture. The user may or may not answer.",
+          "precedes":"spice:00003_hashtag_answering",
+          "follows":"00003_text_answering",
+          "task_role":"script:web-user",
+          "input": {
+            "@id": "spice:00003_gam_image",
+            "belongs_to":"Photograph"
+          },
+          "conditional_output": {
+            "@id": "spice:00003_user_emoji",
+            "belongs_to":"Text"
+          }
+        },
+        {
+          "@id": "spice:00003_hashtag_answering",
+          "@type":"Tagging",
+          "_label": "The web application allows the user to add a list of hashtags related to the selected picture. The user may or may not answer.",
+          "precedes":"00003_picture_recommendation",
+          "follows":"00003_emoji_answering",
+          "task_role":"script:web-user",
+          "input": {
+            "@id": "spice:00003_gam_image",
+            "belongs_to":"Photograph"
+          },
+          "conditional_output": {
+            "@id": "spice:00003_user_hashtag",
+            "belongs_to":"Text"
+          }
+        },
+        {
+          "@id": "spice:00003_picture_recommendation",
+          "@type":"Recommendation",
+          "_label": "The web application recommends the user another picture to be included in the story. The user may or may not accept the suggestion.",
+          "follows":"00003_hashtag_answering",
+          "task_role":["script:software-agent","script:web-user"],
+          "input": {
+            "@id": "spice:00003_gam_image",
+            "belongs_to":"Photograph"
+          },
+          "conditional_output": {
+            "@id": "spice:00003_user_acceptance",
+            "belongs_to":"Text"
+          }
+        }
+      ]
+    }
+  ],
+  "@context": "https://github.com/spice-h2020/manifest/tree/main/context.json"
+}
