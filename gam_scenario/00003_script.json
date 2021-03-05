@@ -78,7 +78,7 @@
             "belongs_to":"Photograph"
           },
           "conditional_output": {
-            "@id": "spice:00003_gam_image",
+            "@id": "spice:00003_gam_selected_image",
             "belongs_to":"Photograph"
           }
         },
@@ -90,7 +90,7 @@
           "follows":{"@id":"spice:00003_user_picture_selection"},
           "task_role":{"@id":"script:web-user"},
           "input": {
-            "@id": "spice:00003_gam_image",
+            "@id": "spice:00003_gam_selected_image",
             "belongs_to":"Photograph"
           },
           "conditional_output": {
@@ -106,7 +106,7 @@
           "follows":{"@id":"spice:00003_text_answering"},
           "task_role":{"@id":"script:web-user"},
           "input": {
-            "@id": "spice:00003_gam_image",
+            "@id": "spice:00003_gam_selected_image",
             "belongs_to":"Photograph"
           },
           "conditional_output": {
@@ -122,7 +122,7 @@
           "follows":{"@id":"spice:00003_emoji_answering"},
           "task_role":{"@id":"script:web-user"},
           "input": {
-            "@id": "spice:00003_gam_image",
+            "@id": "spice:00003_gam_selected_image",
             "belongs_to":"Photograph"
           },
           "conditional_output": {
@@ -137,7 +137,7 @@
           "follows":{"@id":"spice:00003_hashtag_answering"},
           "task_role":[ {"@id":"script:software-agent"},{"@id":"script:web-user"}],
           "input": {
-            "@id": "spice:00003_gam_image",
+            "@id": "spice:00003_gam_recommended_image",
             "belongs_to":"Photograph"
           },
           "conditional_output": {
