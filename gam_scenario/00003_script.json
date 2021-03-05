@@ -118,7 +118,7 @@
           "@id": "spice:00003_hashtag_answering",
           "@type":"Tagging",
           "_label": "The web application allows the user to add a list of hashtags related to the selected picture. The user may or may not answer.",
-          "precedes":{"@id":"spice:00003_picture_recommendation"},
+          "conditional_precedes":[{"@id":"spice:00003_picture_recommendation"},{"@id":"spice:00003_user_picture_selection"}],
           "follows":{"@id":"spice:00003_emoji_answering"},
           "task_role":{"@id":"script:web-user"},
           "input": {
