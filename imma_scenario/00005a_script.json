@@ -86,10 +86,7 @@
           "@id": "spice:00005a_text_answering",
           "@type":"FreeTextAnswering",
           "_label": "The web application prompts a question, selected via a randomized suggestion mechanism, to encourage the user writing a story about the selected picture. The user may or may not answer.",
-          "conditional_precedes":[
-            "@id":"spice:00005a_text_answering",
-            "@id":"spice:00005a_opinions_analysis"
-          ],
+          "conditional_precedes":["spice:00005a_text_answering","spice:00005a_opinions_analysis"],
           "follows":{"@id":"spice:00005a_user_picture_selection"},
           "task_role":{"@id":"script:web-user"},
           "input": {
