@@ -1,0 +1,149 @@
+{
+  "@id": "spice:00005a_script",
+  "_label": "IMMA Viewpoints",
+  "@type":"Script",
+  "project": {
+    "@id":"spice:00005a_script_project",
+    "@type":"StoryBasedNarrativeProject",
+    "purpose": [
+      {
+        "@id": "spice:00005a_user_stories_list",
+        "@type":"StoryBasedNarrativeList"
+      }
+    ]
+  },
+  "purpose": [
+    {
+      "@id":"script:engagement",
+      "@type":"Goal"
+    },
+    {
+      "@id":"script:self-expression",
+      "@type":"Goal"
+    },
+    {
+      "@id":"script:storytelling",
+      "@type":"Goal"
+    }
+  ],
+  "stage": [
+    {
+      "@id": "spice:00005a_preparation",
+      "@type":"Preparation",
+      "_label": "The selection of artefacts.",
+      "task": [
+        {
+          "@id": "spice:00005a_artefact_selection",
+          "@type":["ArtefactsSelection","MultimediaSelection"],
+          "_label": "The curators create a list of pictures of artefacts and context information to be shown to users.",
+          "precedes":{"@id":"spice:00005a_presentation"},
+          "task_role":{"@id":"script:curator"},
+          "input": {
+            "@id": "spice:00005a_imma_artefact",
+            "belongs_to":"Artefact"
+          },
+          "output": {
+            "@id": "spice:00005a_imma_image",
+            "belongs_to":"Photograph"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "spice:00005a_running",
+      "@type":"Running",
+      "_label": "The activity runs online. Users select a picture of an artefact, read context information and answer questions about the artefact",
+      "task": [
+        {
+          "@id": "spice:00005a_presentation",
+          "@type":"PresentationCuratorialContents",
+          "_label": "The web application shows the list of pictures in a random order.",
+          "precedes":{"@id":"spice:00005a_user_picture_selection"},
+          "follows":{"@id":"spice:00005a_artefact_selection"},
+          "task_role":{"@id":"script:software-agent"},
+          "input": {
+            "@id": "spice:00005a_imma_image",
+            "belongs_to":"Photograph"
+          }
+        },
+        {
+          "@id": "spice:00005a_user_picture_selection",
+          "@type":"MultimediaSelection",
+          "_label": "The user may pick 1 picture.",
+          "precedes":{"@id":"spice:00005a_text_answering"},
+          "follows":{"@id":"spice:00005a_presentation"},
+          "task_role":{"@id":"script:web-user"},
+          "input": {
+            "@id": "spice:00005a_imma_image",
+            "belongs_to":"Photograph"
+          },
+          "conditional_output": {
+            "@id": "spice:00005a_imma_selected_image",
+            "belongs_to":"Photograph"
+          }
+        },
+        {
+          "@id": "spice:00005a_text_answering",
+          "@type":"FreeTextAnswering",
+          "_label": "The web application prompts a question, selected via a randomized suggestion mechanism, to encourage the user writing a story about the selected picture. The user may or may not answer.",
+          "conditional_precedes":[
+            "@id":"spice:00005a_text_answering",
+            "@id":"spice:00005a_opinions_analysis"
+          ],
+          "follows":{"@id":"spice:00005a_user_picture_selection"},
+          "task_role":{"@id":"script:web-user"},
+          "input": {
+            "@id": "spice:00005a_imma_selected_image",
+            "belongs_to":"Photograph"
+          },
+          "conditional_output": {
+            "@id": "spice:00005a_user_text",
+            "belongs_to":"Text"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "spice:00005a_analysis",
+      "@type":"ResultsAnalysis",
+      "_label": "Opinions are analysed by curators, who select answers to be recommended to users.",
+      "task": [
+        {
+          "@id": "spice:00005a_opinions_analysis",
+          "@type":"SelectionOfUserGeneratedContents",
+          "_label": "Curators select answers to be shown to users.",
+          "follows":{"@id":"spice:00005a_text_answering"},
+          "task_role":{"@id":"script:curator"},
+          "input": {
+            "@id": "spice:00005a_user_text",
+            "belongs_to":"Text"
+          },
+          "output": {
+            "@id": "spice:00005a_imma_selected_opinions",
+            "belongs_to":"Text"
+          }
+        }
+      ]
+    },
+    {
+      "@id": "spice:00005a_presentation",
+      "@type":"ResultsPresentation",
+      "_label": "Users can see the responses of others to the same artwork",
+      "task": [
+        {
+          "@id": "spice:00005a_presentation_visitor_opinions",
+          "@type":"UserGeneratedContentPresentation",
+          "_label": "The web application shows visualizations on the level of engagement of other people and their answers.",
+          "follows":{"@id":"spice:00005a_opinions_analysis"},
+          "task_role":{"@id":"script:web-user"},
+          "input": {
+            "@id": "spice:00005a_imma_selected_opinions",
+            "belongs_to":"Text"
+          }
+        }
+      ]
+    }
+
+  ],
+  "@context": "https://github.com/spice-h2020/manifest/tree/main/context.json"
+}
