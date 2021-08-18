@@ -1,0 +1,2 @@
+# Scenario MNCN - Treasure Hunt
+
