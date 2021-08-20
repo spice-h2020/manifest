@@ -1,0 +1,205 @@
+{
+    "@id": "00001_mncn_treasure_hunt_script",
+    "_label": "Treasure Hunt Script",
+    "@type":"Script",
+    "project": {
+      "@id":"spice:00001_mncn_script_project",
+      "@type":"StoryBasedNarrativeProject",
+      "purpose": [
+        {
+          "@id": "spice:00001_mncn_user_stories_list",
+          "@type":"StoryBasedNarrativeList"
+        }
+      ]
+    },
+    "purpose": [
+      {
+        "@id":"script:engagement",
+        "@type":"Goal"
+      },
+      {
+        "@id":"script:interaction",
+        "@type":"Goal"
+      },
+      {
+        "@id":"script:storytelling",
+        "@type":"Goal"
+      },
+      {
+        "@id":"script:reflection",
+        "@type":"Goal"
+      }
+    ],
+    "stage": [
+      {
+        "@id": "spice:00001_mncn_treasure_hunt_preparation",
+        "@type":"Preparation",
+        "_label": "The selection of artworks used for each stage of the treasure-hunt and the preparation of the activities for each stage of the treasure hunt.",
+        "task": [
+          {
+            "@id": "spice:00001_treasure_hunt_artefacts_selection",
+            "@type":"ArtefactsSelection",
+            "_label": "The curators create a list of artefacts or picture of artefacts to be shown to users.",
+            "precedes":{"@id":"spice:00001_mncn_treasure_hunt_activity_preparation"},
+            "task_role":{"@id":"script:curator"},
+            "input": {
+              "@id": "spice:00001_mncn_artefact",
+              "belongs_to":"Artefact"
+            },
+            "output": {
+              "@id": "spice:00001_mncn_artefacts_selection",
+              "belongs_to":"narrative:List"
+            }
+          },
+          {
+            "@id": "spice:00001_mncn_treasure_hunt_activity_preparation",
+            "@type":"Design", 
+            "_label": "The curators design the number of stage and each activity for each stage of the treasure hunt.",
+            "precedes":{"@id":"spice:00001_mncn_treasure_hunt_running"},
+            "follows":{"@id":"spice:00001_treasure_hunt_artefacts_selection"},
+            "task_role":{"@id":"script:curator"},
+            "input": {
+              "@id": "spice:00001_mncn_artefacts_selection",
+              "belongs_to":"narrative:List"},
+            "output": {
+              "id": "script:00001_mncn_treasure_hunt_designed_activities",
+              "belongs_to":"Preparation"
+            }
+            }
+        ]
+      },
+      {
+        "@id": "spice:00001_mncn_treasure_hunt_running",
+        "@type":"Running",
+        "_label": "The treasure hunt takes place. Users go through each stage of the treasure hunt until its end.",
+        "task": [
+          {
+            "@id": "spice:00001_mncn_artefact_presentation",
+            "@type":"PresentationCuratorialContents",
+            "_label": "Some curatorial content or set of curatorial contents (e.g. artworks or artworks' images etc.) is presented to the User with factual information.",
+            "conditional_precedes":{"@id":["spice:00001_mncn_artefact_qr_code_searching", "spice:00001_mncn_artefact_qr_code_scanning", "spice:00001_mncn_artefact_presentation", "spice:00001_mncn_multiple_choice_answering", "spice:000, 1_mncn_free_text_answering", "spice:00001_mncn_user_artefact_drawing", "spice:00001_mncn_user_map_location", "spice:00001_mncn_clue_receiving"]},
+            "conditional_follows":{"@id":["spice:00001_mncn_artefact_qr_code_searching", "spice:00001_mncn_artefact_qr_code_scanning", "spice:00001_mncn_artefact_presentation", "spice:00001_mncn_multiple_choice_answering", "spice:000, 1_mncn_free_text_answering", "spice:00001_mncn_user_artefact_drawing", "spice:00001_mncn_user_map_location", "spice:00001_mncn_clue_receiving"]},
+            "task_role":{"@id":"script:software-agent"},
+            "input": {
+              "@id": "spice:00001_mncn_artefact",
+              "belongs_to":"Artefact"
+            },
+            "conditional_output": {
+                "@id": "spice:00001_mncn_artefact_presentation_output",
+                "belongs_to":"Text"
+              }
+          },
+          {
+            "@id": "spice:00001_mncn_artefact_qr_code_searching",
+            "@type":"Searching",
+            "_label": "The User searches an artwork's QR code according to the previously received instructions.",
+            "conditional_precedes":{"@id":["spice:00001_mncn_artefact_qr_code_searching", "spice:00001_mncn_artefact_qr_code_scanning", "spice:00001_mncn_artefact_presentation", "spice:00001_mncn_multiple_choice_answering", "spice:000, 1_mncn_free_text_answering", "spice:00001_mncn_user_artefact_drawing", "spice:00001_mncn_user_map_location", "spice:00001_mncn_clue_receiving"]},
+            "conditional_follows":{"@id":["spice:00001_mncn_artefact_qr_code_searching", "spice:00001_mncn_artefact_qr_code_scanning", "spice:00001_mncn_artefact_presentation", "spice:00001_mncn_multiple_choice_answering", "spice:000, 1_mncn_free_text_answering", "spice:00001_mncn_user_artefact_drawing", "spice:00001_mncn_user_map_location", "spice:00001_mncn_clue_receiving"]},
+            "task_role":{"@id":"script:visitor"},
+            "input": {
+              "@id": "spice:00001_mncn_searching_instructions",
+              "belongs_to":"Text"
+            }
+          },
+          {
+            "@id": "spice:00001_mncn_artefact_qr_code_scanning",
+            "@type":"Manipulation",
+            "_label": "The User scans a QR code next to the artifact and receives factual information, images, questions etc. of any of the activities of the treasure hunt.",
+            "conditional_precedes":{"@id":["spice:00001_mncn_artefact_qr_code_searching", "spice:00001_mncn_artefact_qr_code_scanning", "spice:00001_mncn_artefact_presentation", "spice:00001_mncn_multiple_choice_answering", "spice:000, 1_mncn_free_text_answering", "spice:00001_mncn_user_artefact_drawing", "spice:00001_mncn_user_map_location", "spice:00001_mncn_clue_receiving"]},
+            "conditional_follows":{"@id":["spice:00001_mncn_artefact_qr_code_searching", "spice:00001_mncn_artefact_qr_code_scanning", "spice:00001_mncn_artefact_presentation", "spice:00001_mncn_multiple_choice_answering", "spice:000, 1_mncn_free_text_answering", "spice:00001_mncn_user_artefact_drawing", "spice:00001_mncn_user_map_location", "spice:00001_mncn_clue_receiving"]},
+            "task_role":{"@id":"script:visitor"},
+            "input": {
+              "@id": "spice:00001_mncn_artefact_qr_code",
+              "belongs_to":"owl:Thing"
+            },
+            "conditional_output": {
+                "@id": ["spice:00001_mncn_artefact_qr_code_searching", "spice:00001_mncn_artefact_qr_code_scanning", "spice:00001_mncn_artefact_presentation", "spice:00001_mncn_multiple_choice_answering", "spice:000, 1_mncn_free_text_answering", "spice:00001_mncn_user_artefact_drawing", "spice:00001_mncn_user_map_location", "spice:00001_mncn_clue_receiving"],
+                "belongs_to":"Running"
+              }
+          },
+          {
+            "@id": "spice:00001_mncn_free_text_answering",
+            "@type":"FreeTextAnswering",
+            "_label": "The user answers to an open question about an artwork.",
+            "conditional_precedes":{"@id":["spice:00001_mncn_artefact_qr_code_searching", "spice:00001_mncn_artefact_qr_code_scanning", "spice:00001_mncn_artefact_presentation", "spice:00001_mncn_multiple_choice_answering", "spice:000, 1_mncn_free_text_answering", "spice:00001_mncn_user_artefact_drawing", "spice:00001_mncn_user_map_location", "spice:00001_mncn_clue_receiving"]},
+            "conditional_follows":{"@id":["spice:00001_mncn_artefact_qr_code_searching", "spice:00001_mncn_artefact_qr_code_scanning", "spice:00001_mncn_artefact_presentation", "spice:00001_mncn_multiple_choice_answering", "spice:000, 1_mncn_free_text_answering", "spice:00001_mncn_user_artefact_drawing", "spice:00001_mncn_user_map_location", "spice:00001_mncn_clue_receiving"]},
+            "task_role":[{"@id":"script:software-agent"}, {"@id":"script:web-user"}],
+            "input": {
+              "@id": "spice:00001_mncn_questionnaire_question",
+              "belongs_to":"Text"
+            },
+            "conditional_output": {
+              "@id": "spice:00001_mncn_questionnaire_answer",
+              "belongs_to":"Text"
+            }
+          },
+          {
+            "@id": "spice:00001_mncn_multiple_choice_answering",
+            "@type":"MultipleChoiceAnswering",
+            "_label": "The user answers to a multiple choice question about an artwork.",
+            "conditional_precedes":{"@id":["spice:00001_mncn_artefact_qr_code_searching", "spice:00001_mncn_artefact_qr_code_scanning", "spice:00001_mncn_artefact_presentation", "spice:00001_mncn_multiple_choice_answering", "spice:000, 1_mncn_free_text_answering", "spice:00001_mncn_user_artefact_drawing", "spice:00001_mncn_user_map_location", "spice:00001_mncn_clue_receiving"]},
+            "conditional_follows":{"@id":["spice:00001_mncn_artefact_qr_code_searching", "spice:00001_mncn_artefact_qr_code_scanning", "spice:00001_mncn_artefact_presentation", "spice:00001_mncn_multiple_choice_answering", "spice:000, 1_mncn_free_text_answering", "spice:00001_mncn_user_artefact_drawing", "spice:00001_mncn_user_map_location", "spice:00001_mncn_clue_receiving"]},
+            "task_role":[{"@id":"script:software-agent"}, {"@id":"script:web-user"}],
+            "input": {
+              "@id": "spice:00001_mncn_questionnaire_question",
+              "belongs_to":"Text"
+            },
+            "conditional_output": {
+              "@id": "spice:00001_mncn_questionnaire_answer",
+              "belongs_to":"Text"
+            }
+          },
+          {
+            "@id": "spice:00001_mncn_user_artefact_drawing",
+            "@type":"script:PictureProduction",
+            "_label": "The User observes the artwork and totally or partially draws it, according to the given intructions.",
+            "conditional_precedes":{"@id":["spice:00001_mncn_artefact_qr_code_searching", "spice:00001_mncn_artefact_qr_code_scanning", "spice:00001_mncn_artefact_presentation", "spice:00001_mncn_multiple_choice_answering", "spice:000, 1_mncn_free_text_answering", "spice:00001_mncn_user_artefact_drawing", "spice:00001_mncn_user_map_location", "spice:00001_mncn_clue_receiving"]},
+            "conditional_follows":{"@id":["spice:00001_mncn_artefact_qr_code_searching", "spice:00001_mncn_artefact_qr_code_scanning", "spice:00001_mncn_artefact_presentation", "spice:00001_mncn_multiple_choice_answering", "spice:000, 1_mncn_free_text_answering", "spice:00001_mncn_user_artefact_drawing", "spice:00001_mncn_user_map_location", "spice:00001_mncn_clue_receiving"]},
+            "task_role":[{"@id":"script:software-agent"}, {"@id":"script:web-user"}],
+            "input": {
+              "@id": "spice:00001_mncn_drawing_instructions",
+              "belongs_to":"Text"
+            },
+            "conditional_output": {
+              "@id": "spice:00001_mncn_user_drawing_output",
+              "belongs_to":"Image"
+            }
+          },
+          {
+            "@id": "spice:00001_mncn_user_map_location",
+            "@type":"script:Manipulation",
+            "_label": "The user puts some pins on a map in order to locate an artefact or a region, according to the given instructions.",
+            "conditional_precedes":{"@id":["spice:00001_mncn_artefact_qr_code_searching", "spice:00001_mncn_artefact_qr_code_scanning", "spice:00001_mncn_artefact_presentation", "spice:00001_mncn_multiple_choice_answering", "spice:000, 1_mncn_free_text_answering", "spice:00001_mncn_user_artefact_drawing", "spice:00001_mncn_user_map_location", "spice:00001_mncn_clue_receiving"]},
+            "conditional_follows":{"@id":["spice:00001_mncn_artefact_qr_code_searching", "spice:00001_mncn_artefact_qr_code_scanning", "spice:00001_mncn_artefact_presentation", "spice:00001_mncn_multiple_choice_answering", "spice:000, 1_mncn_free_text_answering", "spice:00001_mncn_user_artefact_drawing", "spice:00001_mncn_user_map_location", "spice:00001_mncn_clue_receiving"]},
+            "task_role":[{"@id":"script:software-agent"}, {"@id":"script:web-user"}],
+            "input": {
+              "@id": "spice:00001_mncn_map_locating_instructions",
+              "belongs_to":"Text"
+            },
+            "conditional_output": {
+              "@id": "spice:00001_mncn_map_locating_output",
+              "belongs_to":"Image"
+            }
+          },
+          {
+            "@id": "spice:00001_mncn_clue_receiving",
+            "@type":"script:Rewarding",
+            "_label": "The user receives a clue to continue to the next stage of the treasure hunt or to the next task. If it's the final activity the output could be a final prize.",
+            "conditional_precedes":{"@id":["spice:00001_mncn_artefact_qr_code_searching", "spice:00001_mncn_artefact_qr_code_scanning", "spice:00001_mncn_artefact_presentation", "spice:00001_mncn_multiple_choice_answering", "spice:000, 1_mncn_free_text_answering", "spice:00001_mncn_user_artefact_drawing", "spice:00001_mncn_user_map_location", "spice:00001_mncn_clue_receiving"]},
+            "conditional_follows":{"@id":["spice:00001_mncn_artefact_qr_code_searching", "spice:00001_mncn_artefact_qr_code_scanning", "spice:00001_mncn_artefact_presentation", "spice:00001_mncn_multiple_choice_answering", "spice:000, 1_mncn_free_text_answering", "spice:00001_mncn_user_artefact_drawing", "spice:00001_mncn_user_map_location", "spice:00001_mncn_clue_receiving"]},
+            "task_role":[{"@id":"script:software-agent"}, {"@id":"script:web-user"}],
+            "conditional_input": {
+              "@id":["spice:00001_mncn_artefact_qr_code_searching", "spice:00001_mncn_artefact_qr_code_scanning", "spice:00001_mncn_artefact_presentation", "spice:00001_mncn_multiple_choice_answering", "spice:000, 1_mncn_free_text_answering", "spice:00001_mncn_user_artefact_drawing", "spice:00001_mncn_user_map_location", "spice:00001_mncn_clue_receiving"],
+              "belongs_to":"Running"
+            },
+            "conditional_output": {
+              "@id": "spice:00001_mncn_clue_or_prize",
+              "belongs_to":"Text"
+            }
+          }
+        ]
+      }
+    ],
+    "@context": "https://github.com/spice-h2020/manifest/tree/main/context.json"
+  }
+  
