@@ -40,7 +40,7 @@ All the running tasks are interchangeable and can follow one another according t
 ## Manifest and Script
 
 * [Script(JSON-LD)](https://github.com/spice-h2020/manifest/blob/main/mncn_scenario/00006_mncn_treasure_hunt.json): a JSON-LD serialization of the treasure hunt;
-* [Manifest](https://github.com/spice-h2020/manifest/blob/main/context.json): the context of the JSON-LD file.
+* [context.json](https://github.com/spice-h2020/manifest/blob/main/context.json): The ontology specification for representing both manifest and script.
 
 
 
