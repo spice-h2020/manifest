@@ -198,7 +198,7 @@
         {
           "@id": "spice:00006_mncn_clue_receiving",
           "@type":"script:Rewarding",
-          "_label": "The user receives a clue to continue to the next stage of the treasure hunt or to the next task. If it's the final activity the output could be a final prize.",
+          "_label": "The user receives either a clue to continue to the next stage of the treasure hunt or to the next task that can be in the form of instructions to follow to answer questions, draw something or place inputs in a map.  If it's the final activity the output could be a final prize.",
           "conditional_precedes":[{"@id":"spice:00006_mncn_artefact_qr_code_searching"},{"@id":"spice:00006_mncn_artefact_qr_code_scanning"}, {"@id":"spice:00006_mncn_artefact_presentation"}, {"@id":"spice:00006_mncn_multiple_choice_answering"}, {"@id":"spice:000, 1_mncn_free_text_answering"}, {"@id":"spice:00006_mncn_user_artefact_drawing"}, {"@id":"spice:00006_mncn_user_map_location"}, {"@id":"spice:00006_mncn_clue_receiving"}],
           "conditional_follows":[{"@id": "spice:00006_mncn_treasure_hunt_activity_preparation"},{"@id":"spice:00006_mncn_artefact_qr_code_searching"},{"@id":"spice:00006_mncn_artefact_qr_code_scanning"}, {"@id":"spice:00006_mncn_artefact_presentation"}, {"@id":"spice:00006_mncn_multiple_choice_answering"}, {"@id":"spice:000, 1_mncn_free_text_answering"}, {"@id":"spice:00006_mncn_user_artefact_drawing"}, {"@id":"spice:00006_mncn_user_map_location"}, {"@id":"spice:00006_mncn_clue_receiving"}],
           "task_role":[{"@id":"script:software-agent"}, {"@id":"script:web-user"}],
@@ -220,10 +220,27 @@
             {"@id": "spice:00006_mncn_clue_receiving",
               "belongs_to":"Running"}
         ],
-          "conditional_output": {
-            "@id": "spice:00006_mncn_clue_or_prize",
+          "conditional_output": [{
+            "@id": "spice:00006_mncn_clue",
+            "belongs_to":"Text"
+          },
+          {
+            "@id": "spice:00006_mncn_searching_instructions",
+            "belongs_to":"Text"
+          },
+          {
+            "@id": "spice:00006_mncn_prize",
+            "belongs_to":"owl:Thing"
+          },
+          {
+            "@id": "spice:00006_mncn_drawing_instructions",
+            "belongs_to":"Text"
+          },
+          {
+            "@id": "spice:00006_mncn_map_locating_instructions",
             "belongs_to":"Text"
           }
+        ]
         }
       ]
     }

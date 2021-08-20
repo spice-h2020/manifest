@@ -1,5 +1,4 @@
 # Scenario MNCN - Treasure Hunt
-to be completed
 ***
 
 ## Description
@@ -18,13 +17,30 @@ This script has not yet been executed. (as of 18/08/2021, to be verified)
 
 ## Script
 
+The script for the Treasure Hunt is divided into preparation and running activities
+
 ### Preparation
 
+* `Treasure hunt artefacts selection`: the curator(s) of the museum/organizer(s) of the treasure hunt select the artefacts that will be included in the treasure hunt.
+* `Treasure hunt activity preparation`: The curator(s) of the museum design the number of stage and each activity for each stage of the treasure hunt.
 
 ### Running
 
+* `artefact qrcode searching`: the User searches an artwork's QR code
+* `artefact qrcode scanning`: The User scans a QR code next to the artifact and receives factual information, images, questions etc. of any of the activities of the treasure hunt.
+* `artefact presentation`: Some curatorial content or set of curatorial contents (e.g. artworks or artworks' images etc.) is presented to the User with factual information.
+* `multiple choice answering`: The user answers to a multiple choice question about an artwork in order to advance with the treasure hunt.
+* `free text answering`: The user answers to an open question about an artwork in order to advance with the treasure hunt.
+* `user artefact drawing`: The User observes the artwork and totally or partially draws it, according to the given intructions.
+* `user map location`: The user puts some pins on a map in order to locate an artefact or a region, according to the given instructions.
+* `clue, reward or instruction receiving`: The user receives either a clue to continue to the next stage of the treasure hunt or to the next task that can be in the form of instructions to follow to answer questions, draw something or place inputs in a map.  If it's the final activity the output could be a final prize.
+
+All the running tasks are interchangeable and can follow one another according to the design of the treasure hunt.
 
 ## Manifest and Script
+
+* [Script(JSON-LD)](https://github.com/spice-h2020/manifest/blob/main/mncn_scenario/00006_mncn_treasure_hunt.json): a JSON-LD serialization of the treasure hunt;
+* [Manifest](https://github.com/spice-h2020/manifest/blob/main/context.json): the context of the JSON-LD file.
 
 
 
