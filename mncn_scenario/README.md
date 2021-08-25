@@ -31,7 +31,7 @@ The script for the Treasure Hunt is divided into preparation and running activit
 * `artefact presentation`: Some curatorial content or set of curatorial contents (e.g. artworks or artworks' images etc.) is presented to the User with factual information.
 * `multiple choice answering`: The User answers to a multiple choice question about an artwork in order to advance with the treasure hunt.
 * `free text answering`: The User answers to an open question about an artwork in order to advance with the treasure hunt.
-* `user artefact drawing`: The User observes the artwork and totally or partially draws it, according to the given intructions.
+* `user artefact drawing`: The User observes the artwork and totally or partially draws it, according to the given instructions.
 * `user map location`: The User puts some pins on a map in order to locate an artefact or a region, according to the given instructions.
 * `clue, reward or instruction receiving`: The User receives either a clue to continue to the next stage of the treasure hunt or to the next task that can be in the form of instructions to follow to answer questions, draw something or place inputs in a map.  If it's the final activity the output could be a final prize.
 
