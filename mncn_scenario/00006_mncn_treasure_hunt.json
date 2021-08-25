@@ -55,7 +55,7 @@
           "@id": "spice:00006_mncn_treasure_hunt_activity_preparation",
           "@type":"Design", 
           "_label": "The curators design the number of stage and each activity for each stage of the treasure hunt.",
-          "conditional_precedes":[{"@id":"spice:00006_mncn_artefact_qr_code_searching"},{"@id":"spice:00006_mncn_artefact_qr_code_scanning"}, {"@id":"spice:00006_mncn_artefact_presentation"}, {"@id":"spice:00006_mncn_multiple_choice_answering"}, {"@id":"spice:000, 1_mncn_free_text_answering"}, {"@id":"spice:00006_mncn_user_artefact_drawing"}, {"@id":"spice:00006_mncn_user_map_location"}, {"@id":"spice:00006_mncn_clue_receiving"}],
+          "conditional_precedes":[{"@id":"spice:00006_mncn_artefact_qr_code_searching"},{"@id":"spice:00006_mncn_artefact_qr_code_scanning"}, {"@id":"spice:00006_mncn_artefact_presentation"}, {"@id":"spice:00006_mncn_multiple_choice_answering"}, {"@id":"spice:00006_mncn_free_text_answering"}, {"@id":"spice:00006_mncn_user_artefact_drawing"}, {"@id":"spice:00006_mncn_user_map_location"}, {"@id":"spice:00006_mncn_clue_receiving"}],
           "follows":{"@id":"spice:00006_treasure_hunt_artefacts_selection"},
           "task_role":{"@id":"script:curator"},
           "input": {
@@ -77,8 +77,8 @@
           "@id": "spice:00006_mncn_artefact_presentation",
           "@type":"PresentationCuratorialContents",
           "_label": "Some curatorial content or set of curatorial contents (e.g. artworks or artworks' images etc.) is presented to the User with factual information.",
-          "conditional_precedes":[{"@id":"spice:00006_mncn_artefact_qr_code_searching"},{"@id":"spice:00006_mncn_artefact_qr_code_scanning"}, {"@id":"spice:00006_mncn_artefact_presentation"}, {"@id":"spice:00006_mncn_multiple_choice_answering"}, {"@id":"spice:000, 1_mncn_free_text_answering"}, {"@id":"spice:00006_mncn_user_artefact_drawing"}, {"@id":"spice:00006_mncn_user_map_location"}, {"@id":"spice:00006_mncn_clue_receiving"}],
-          "conditional_follows":[{"@id": "spice:00006_mncn_treasure_hunt_activity_preparation"},{"@id":"spice:00006_mncn_artefact_qr_code_searching"},{"@id":"spice:00006_mncn_artefact_qr_code_scanning"}, {"@id":"spice:00006_mncn_artefact_presentation"}, {"@id":"spice:00006_mncn_multiple_choice_answering"}, {"@id":"spice:000, 1_mncn_free_text_answering"}, {"@id":"spice:00006_mncn_user_artefact_drawing"}, {"@id":"spice:00006_mncn_user_map_location"}, {"@id":"spice:00006_mncn_clue_receiving"}],
+          "conditional_precedes":[{"@id":"spice:00006_mncn_artefact_qr_code_searching"},{"@id":"spice:00006_mncn_artefact_qr_code_scanning"}, {"@id":"spice:00006_mncn_artefact_presentation"}, {"@id":"spice:00006_mncn_multiple_choice_answering"}, {"@id":"spice:00006_mncn_free_text_answering"}, {"@id":"spice:00006_mncn_user_artefact_drawing"}, {"@id":"spice:00006_mncn_user_map_location"}, {"@id":"spice:00006_mncn_clue_receiving"}],
+          "conditional_follows":[{"@id": "spice:00006_mncn_treasure_hunt_activity_preparation"},{"@id":"spice:00006_mncn_artefact_qr_code_searching"},{"@id":"spice:00006_mncn_artefact_qr_code_scanning"}, {"@id":"spice:00006_mncn_artefact_presentation"}, {"@id":"spice:00006_mncn_multiple_choice_answering"}, {"@id":"spice:00006_mncn_free_text_answering"}, {"@id":"spice:00006_mncn_user_artefact_drawing"}, {"@id":"spice:00006_mncn_user_map_location"}, {"@id":"spice:00006_mncn_clue_receiving"}],
           "task_role":{"@id":"script:software-agent"},
           "input": {
             "@id": "spice:00006_mncn_artefact",
@@ -93,8 +93,8 @@
           "@id": "spice:00006_mncn_artefact_qr_code_searching",
           "@type":"Searching",
           "_label": "The User searches an artwork's QR code according to the previously received instructions.",
-          "conditional_precedes":[{"@id":"spice:00006_mncn_artefact_qr_code_searching"},{"@id":"spice:00006_mncn_artefact_qr_code_scanning"}, {"@id":"spice:00006_mncn_artefact_presentation"}, {"@id":"spice:00006_mncn_multiple_choice_answering"}, {"@id":"spice:000, 1_mncn_free_text_answering"}, {"@id":"spice:00006_mncn_user_artefact_drawing"}, {"@id":"spice:00006_mncn_user_map_location"}, {"@id":"spice:00006_mncn_clue_receiving"}],
-          "conditional_follows":[{"@id": "spice:00006_mncn_treasure_hunt_activity_preparation"},{"@id":"spice:00006_mncn_artefact_qr_code_searching"},{"@id":"spice:00006_mncn_artefact_qr_code_scanning"}, {"@id":"spice:00006_mncn_artefact_presentation"}, {"@id":"spice:00006_mncn_multiple_choice_answering"}, {"@id":"spice:000, 1_mncn_free_text_answering"}, {"@id":"spice:00006_mncn_user_artefact_drawing"}, {"@id":"spice:00006_mncn_user_map_location"}, {"@id":"spice:00006_mncn_clue_receiving"}],
+          "conditional_precedes":[{"@id":"spice:00006_mncn_artefact_qr_code_searching"},{"@id":"spice:00006_mncn_artefact_qr_code_scanning"}, {"@id":"spice:00006_mncn_artefact_presentation"}, {"@id":"spice:00006_mncn_multiple_choice_answering"}, {"@id":"spice:00006_mncn_free_text_answering"}, {"@id":"spice:00006_mncn_user_artefact_drawing"}, {"@id":"spice:00006_mncn_user_map_location"}, {"@id":"spice:00006_mncn_clue_receiving"}],
+          "conditional_follows":[{"@id": "spice:00006_mncn_treasure_hunt_activity_preparation"},{"@id":"spice:00006_mncn_artefact_qr_code_searching"},{"@id":"spice:00006_mncn_artefact_qr_code_scanning"}, {"@id":"spice:00006_mncn_artefact_presentation"}, {"@id":"spice:00006_mncn_multiple_choice_answering"}, {"@id":"spice:00006_mncn_free_text_answering"}, {"@id":"spice:00006_mncn_user_artefact_drawing"}, {"@id":"spice:00006_mncn_user_map_location"}, {"@id":"spice:00006_mncn_clue_receiving"}],
           "task_role":{"@id":"script:visitor"},
           "input": {
             "@id": "spice:00006_mncn_searching_instructions",
@@ -105,8 +105,8 @@
           "@id": "spice:00006_mncn_artefact_qr_code_scanning",
           "@type":"Manipulation",
           "_label": "The User scans a QR code next to the artifact and receives factual information, images, questions etc. of any of the activities of the treasure hunt.",
-          "conditional_precedes":[{"@id":"spice:00006_mncn_artefact_qr_code_searching"},{"@id":"spice:00006_mncn_artefact_qr_code_scanning"}, {"@id":"spice:00006_mncn_artefact_presentation"}, {"@id":"spice:00006_mncn_multiple_choice_answering"}, {"@id":"spice:000, 1_mncn_free_text_answering"}, {"@id":"spice:00006_mncn_user_artefact_drawing"}, {"@id":"spice:00006_mncn_user_map_location"}, {"@id":"spice:00006_mncn_clue_receiving"}],
-          "conditional_follows":[{"@id": "spice:00006_mncn_treasure_hunt_activity_preparation"},{"@id":"spice:00006_mncn_artefact_qr_code_searching"},{"@id":"spice:00006_mncn_artefact_qr_code_scanning"}, {"@id":"spice:00006_mncn_artefact_presentation"}, {"@id":"spice:00006_mncn_multiple_choice_answering"}, {"@id":"spice:000, 1_mncn_free_text_answering"}, {"@id":"spice:00006_mncn_user_artefact_drawing"}, {"@id":"spice:00006_mncn_user_map_location"}, {"@id":"spice:00006_mncn_clue_receiving"}],
+          "conditional_precedes":[{"@id":"spice:00006_mncn_artefact_qr_code_searching"},{"@id":"spice:00006_mncn_artefact_qr_code_scanning"}, {"@id":"spice:00006_mncn_artefact_presentation"}, {"@id":"spice:00006_mncn_multiple_choice_answering"}, {"@id":"spice:00006_mncn_free_text_answering"}, {"@id":"spice:00006_mncn_user_artefact_drawing"}, {"@id":"spice:00006_mncn_user_map_location"}, {"@id":"spice:00006_mncn_clue_receiving"}],
+          "conditional_follows":[{"@id": "spice:00006_mncn_treasure_hunt_activity_preparation"},{"@id":"spice:00006_mncn_artefact_qr_code_searching"},{"@id":"spice:00006_mncn_artefact_qr_code_scanning"}, {"@id":"spice:00006_mncn_artefact_presentation"}, {"@id":"spice:00006_mncn_multiple_choice_answering"}, {"@id":"spice:00006_mncn_free_text_answering"}, {"@id":"spice:00006_mncn_user_artefact_drawing"}, {"@id":"spice:00006_mncn_user_map_location"}, {"@id":"spice:00006_mncn_clue_receiving"}],
           "task_role":{"@id":"script:visitor"},
           "input": {
             "@id": "spice:00006_mncn_artefact_qr_code",
@@ -134,9 +134,9 @@
         {
           "@id": "spice:00006_mncn_free_text_answering",
           "@type":"FreeTextAnswering",
-          "_label": "The user answers to an open question about an artwork.",
-          "conditional_precedes":[{"@id":"spice:00006_mncn_artefact_qr_code_searching"},{"@id":"spice:00006_mncn_artefact_qr_code_scanning"}, {"@id":"spice:00006_mncn_artefact_presentation"}, {"@id":"spice:00006_mncn_multiple_choice_answering"}, {"@id":"spice:000, 1_mncn_free_text_answering"}, {"@id":"spice:00006_mncn_user_artefact_drawing"}, {"@id":"spice:00006_mncn_user_map_location"}, {"@id":"spice:00006_mncn_clue_receiving"}],
-          "conditional_follows":[{"@id": "spice:00006_mncn_treasure_hunt_activity_preparation"},{"@id":"spice:00006_mncn_artefact_qr_code_searching"},{"@id":"spice:00006_mncn_artefact_qr_code_scanning"}, {"@id":"spice:00006_mncn_artefact_presentation"}, {"@id":"spice:00006_mncn_multiple_choice_answering"}, {"@id":"spice:000, 1_mncn_free_text_answering"}, {"@id":"spice:00006_mncn_user_artefact_drawing"}, {"@id":"spice:00006_mncn_user_map_location"}, {"@id":"spice:00006_mncn_clue_receiving"}],
+          "_label": "The User answers to an open question about an artwork.",
+          "conditional_precedes":[{"@id":"spice:00006_mncn_artefact_qr_code_searching"},{"@id":"spice:00006_mncn_artefact_qr_code_scanning"}, {"@id":"spice:00006_mncn_artefact_presentation"}, {"@id":"spice:00006_mncn_multiple_choice_answering"}, {"@id":"spice:00006_mncn_free_text_answering"}, {"@id":"spice:00006_mncn_user_artefact_drawing"}, {"@id":"spice:00006_mncn_user_map_location"}, {"@id":"spice:00006_mncn_clue_receiving"}],
+          "conditional_follows":[{"@id": "spice:00006_mncn_treasure_hunt_activity_preparation"},{"@id":"spice:00006_mncn_artefact_qr_code_searching"},{"@id":"spice:00006_mncn_artefact_qr_code_scanning"}, {"@id":"spice:00006_mncn_artefact_presentation"}, {"@id":"spice:00006_mncn_multiple_choice_answering"}, {"@id":"spice:00006_mncn_free_text_answering"}, {"@id":"spice:00006_mncn_user_artefact_drawing"}, {"@id":"spice:00006_mncn_user_map_location"}, {"@id":"spice:00006_mncn_clue_receiving"}],
           "task_role":[{"@id":"script:software-agent"}, {"@id":"script:web-user"}],
           "input": {
             "@id": "spice:00006_mncn_questionnaire_question",
@@ -150,9 +150,9 @@
         {
           "@id": "spice:00006_mncn_multiple_choice_answering",
           "@type":"MultipleChoiceAnswering",
-          "_label": "The user answers to a multiple choice question about an artwork.",
-          "conditional_precedes":[{"@id":"spice:00006_mncn_artefact_qr_code_searching"},{"@id":"spice:00006_mncn_artefact_qr_code_scanning"}, {"@id":"spice:00006_mncn_artefact_presentation"}, {"@id":"spice:00006_mncn_multiple_choice_answering"}, {"@id":"spice:000, 1_mncn_free_text_answering"}, {"@id":"spice:00006_mncn_user_artefact_drawing"}, {"@id":"spice:00006_mncn_user_map_location"}, {"@id":"spice:00006_mncn_clue_receiving"}],
-          "conditional_follows":[{"@id": "spice:00006_mncn_treasure_hunt_activity_preparation"},{"@id":"spice:00006_mncn_artefact_qr_code_searching"},{"@id":"spice:00006_mncn_artefact_qr_code_scanning"}, {"@id":"spice:00006_mncn_artefact_presentation"}, {"@id":"spice:00006_mncn_multiple_choice_answering"}, {"@id":"spice:000, 1_mncn_free_text_answering"}, {"@id":"spice:00006_mncn_user_artefact_drawing"}, {"@id":"spice:00006_mncn_user_map_location"}, {"@id":"spice:00006_mncn_clue_receiving"}],
+          "_label": "The User answers to a multiple choice question about an artwork.",
+          "conditional_precedes":[{"@id":"spice:00006_mncn_artefact_qr_code_searching"},{"@id":"spice:00006_mncn_artefact_qr_code_scanning"}, {"@id":"spice:00006_mncn_artefact_presentation"}, {"@id":"spice:00006_mncn_multiple_choice_answering"}, {"@id":"spice:00006_mncn_free_text_answering"}, {"@id":"spice:00006_mncn_user_artefact_drawing"}, {"@id":"spice:00006_mncn_user_map_location"}, {"@id":"spice:00006_mncn_clue_receiving"}],
+          "conditional_follows":[{"@id": "spice:00006_mncn_treasure_hunt_activity_preparation"},{"@id":"spice:00006_mncn_artefact_qr_code_searching"},{"@id":"spice:00006_mncn_artefact_qr_code_scanning"}, {"@id":"spice:00006_mncn_artefact_presentation"}, {"@id":"spice:00006_mncn_multiple_choice_answering"}, {"@id":"spice:00006_mncn_free_text_answering"}, {"@id":"spice:00006_mncn_user_artefact_drawing"}, {"@id":"spice:00006_mncn_user_map_location"}, {"@id":"spice:00006_mncn_clue_receiving"}],
           "task_role":[{"@id":"script:software-agent"}, {"@id":"script:web-user"}],
           "input": {
             "@id": "spice:00006_mncn_questionnaire_question",
@@ -167,8 +167,8 @@
           "@id": "spice:00006_mncn_user_artefact_drawing",
           "@type":"script:PictureProduction",
           "_label": "The User observes the artwork and totally or partially draws it, according to the given intructions.",
-          "conditional_precedes":[{"@id":"spice:00006_mncn_artefact_qr_code_searching"},{"@id":"spice:00006_mncn_artefact_qr_code_scanning"}, {"@id":"spice:00006_mncn_artefact_presentation"}, {"@id":"spice:00006_mncn_multiple_choice_answering"}, {"@id":"spice:000, 1_mncn_free_text_answering"}, {"@id":"spice:00006_mncn_user_artefact_drawing"}, {"@id":"spice:00006_mncn_user_map_location"}, {"@id":"spice:00006_mncn_clue_receiving"}],
-          "conditional_follows":[{"@id": "spice:00006_mncn_treasure_hunt_activity_preparation"},{"@id":"spice:00006_mncn_artefact_qr_code_searching"},{"@id":"spice:00006_mncn_artefact_qr_code_scanning"}, {"@id":"spice:00006_mncn_artefact_presentation"}, {"@id":"spice:00006_mncn_multiple_choice_answering"}, {"@id":"spice:000, 1_mncn_free_text_answering"}, {"@id":"spice:00006_mncn_user_artefact_drawing"}, {"@id":"spice:00006_mncn_user_map_location"}, {"@id":"spice:00006_mncn_clue_receiving"}],
+          "conditional_precedes":[{"@id":"spice:00006_mncn_artefact_qr_code_searching"},{"@id":"spice:00006_mncn_artefact_qr_code_scanning"}, {"@id":"spice:00006_mncn_artefact_presentation"}, {"@id":"spice:00006_mncn_multiple_choice_answering"}, {"@id":"spice:00006_mncn_free_text_answering"}, {"@id":"spice:00006_mncn_user_artefact_drawing"}, {"@id":"spice:00006_mncn_user_map_location"}, {"@id":"spice:00006_mncn_clue_receiving"}],
+          "conditional_follows":[{"@id": "spice:00006_mncn_treasure_hunt_activity_preparation"},{"@id":"spice:00006_mncn_artefact_qr_code_searching"},{"@id":"spice:00006_mncn_artefact_qr_code_scanning"}, {"@id":"spice:00006_mncn_artefact_presentation"}, {"@id":"spice:00006_mncn_multiple_choice_answering"}, {"@id":"spice:00006_mncn_free_text_answering"}, {"@id":"spice:00006_mncn_user_artefact_drawing"}, {"@id":"spice:00006_mncn_user_map_location"}, {"@id":"spice:00006_mncn_clue_receiving"}],
           "task_role":[{"@id":"script:software-agent"}, {"@id":"script:web-user"}],
           "input": {
             "@id": "spice:00006_mncn_drawing_instructions",
@@ -182,9 +182,9 @@
         {
           "@id": "spice:00006_mncn_user_map_location",
           "@type":"script:Manipulation",
-          "_label": "The user puts some pins on a map in order to locate an artefact or a region, according to the given instructions.",
-          "conditional_precedes":[{"@id":"spice:00006_mncn_artefact_qr_code_searching"},{"@id":"spice:00006_mncn_artefact_qr_code_scanning"}, {"@id":"spice:00006_mncn_artefact_presentation"}, {"@id":"spice:00006_mncn_multiple_choice_answering"}, {"@id":"spice:000, 1_mncn_free_text_answering"}, {"@id":"spice:00006_mncn_user_artefact_drawing"}, {"@id":"spice:00006_mncn_user_map_location"}, {"@id":"spice:00006_mncn_clue_receiving"}],
-          "conditional_follows":[{"@id": "spice:00006_mncn_treasure_hunt_activity_preparation"},{"@id":"spice:00006_mncn_artefact_qr_code_searching"},{"@id":"spice:00006_mncn_artefact_qr_code_scanning"}, {"@id":"spice:00006_mncn_artefact_presentation"}, {"@id":"spice:00006_mncn_multiple_choice_answering"}, {"@id":"spice:000, 1_mncn_free_text_answering"}, {"@id":"spice:00006_mncn_user_artefact_drawing"}, {"@id":"spice:00006_mncn_user_map_location"}, {"@id":"spice:00006_mncn_clue_receiving"}],
+          "_label": "The User puts some pins on a map in order to locate an artefact or a region, according to the given instructions.",
+          "conditional_precedes":[{"@id":"spice:00006_mncn_artefact_qr_code_searching"},{"@id":"spice:00006_mncn_artefact_qr_code_scanning"}, {"@id":"spice:00006_mncn_artefact_presentation"}, {"@id":"spice:00006_mncn_multiple_choice_answering"}, {"@id":"spice:00006_mncn_free_text_answering"}, {"@id":"spice:00006_mncn_user_artefact_drawing"}, {"@id":"spice:00006_mncn_user_map_location"}, {"@id":"spice:00006_mncn_clue_receiving"}],
+          "conditional_follows":[{"@id": "spice:00006_mncn_treasure_hunt_activity_preparation"},{"@id":"spice:00006_mncn_artefact_qr_code_searching"},{"@id":"spice:00006_mncn_artefact_qr_code_scanning"}, {"@id":"spice:00006_mncn_artefact_presentation"}, {"@id":"spice:00006_mncn_multiple_choice_answering"}, {"@id":"spice:00006_mncn_free_text_answering"}, {"@id":"spice:00006_mncn_user_artefact_drawing"}, {"@id":"spice:00006_mncn_user_map_location"}, {"@id":"spice:00006_mncn_clue_receiving"}],
           "task_role":[{"@id":"script:software-agent"}, {"@id":"script:web-user"}],
           "input": {
             "@id": "spice:00006_mncn_map_locating_instructions",
@@ -198,9 +198,9 @@
         {
           "@id": "spice:00006_mncn_clue_receiving",
           "@type":"script:Rewarding",
-          "_label": "The user receives either a clue to continue to the next stage of the treasure hunt or to the next task that can be in the form of instructions to follow to answer questions, draw something or place inputs in a map.  If it's the final activity the output could be a final prize.",
-          "conditional_precedes":[{"@id":"spice:00006_mncn_artefact_qr_code_searching"},{"@id":"spice:00006_mncn_artefact_qr_code_scanning"}, {"@id":"spice:00006_mncn_artefact_presentation"}, {"@id":"spice:00006_mncn_multiple_choice_answering"}, {"@id":"spice:000, 1_mncn_free_text_answering"}, {"@id":"spice:00006_mncn_user_artefact_drawing"}, {"@id":"spice:00006_mncn_user_map_location"}, {"@id":"spice:00006_mncn_clue_receiving"}],
-          "conditional_follows":[{"@id": "spice:00006_mncn_treasure_hunt_activity_preparation"},{"@id":"spice:00006_mncn_artefact_qr_code_searching"},{"@id":"spice:00006_mncn_artefact_qr_code_scanning"}, {"@id":"spice:00006_mncn_artefact_presentation"}, {"@id":"spice:00006_mncn_multiple_choice_answering"}, {"@id":"spice:000, 1_mncn_free_text_answering"}, {"@id":"spice:00006_mncn_user_artefact_drawing"}, {"@id":"spice:00006_mncn_user_map_location"}, {"@id":"spice:00006_mncn_clue_receiving"}],
+          "_label": "The User receives either a clue to continue to the next stage of the treasure hunt or to the next task that can be in the form of instructions to follow to answer questions, draw something or place inputs in a map.  If it's the final activity the output could be a final prize.",
+          "conditional_precedes":[{"@id":"spice:00006_mncn_artefact_qr_code_searching"},{"@id":"spice:00006_mncn_artefact_qr_code_scanning"}, {"@id":"spice:00006_mncn_artefact_presentation"}, {"@id":"spice:00006_mncn_multiple_choice_answering"}, {"@id":"spice:00006_mncn_free_text_answering"}, {"@id":"spice:00006_mncn_user_artefact_drawing"}, {"@id":"spice:00006_mncn_user_map_location"}, {"@id":"spice:00006_mncn_clue_receiving"}],
+          "conditional_follows":[{"@id": "spice:00006_mncn_treasure_hunt_activity_preparation"},{"@id":"spice:00006_mncn_artefact_qr_code_searching"},{"@id":"spice:00006_mncn_artefact_qr_code_scanning"}, {"@id":"spice:00006_mncn_artefact_presentation"}, {"@id":"spice:00006_mncn_multiple_choice_answering"}, {"@id":"spice:00006_mncn_free_text_answering"}, {"@id":"spice:00006_mncn_user_artefact_drawing"}, {"@id":"spice:00006_mncn_user_map_location"}, {"@id":"spice:00006_mncn_clue_receiving"}],
           "task_role":[{"@id":"script:software-agent"}, {"@id":"script:web-user"}],
           "conditional_input": [
             {"@id": "spice:00006_mncn_artefact_qr_code_searching",
