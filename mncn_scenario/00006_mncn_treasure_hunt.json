@@ -166,7 +166,7 @@
         {
           "@id": "spice:00006_mncn_user_artefact_drawing",
           "@type":"script:PictureProduction",
-          "_label": "The User observes the artwork and totally or partially draws it, according to the given intructions.",
+          "_label": "The User observes the artwork and totally or partially draws it, according to the given instructions.",
           "conditional_precedes":[{"@id":"spice:00006_mncn_artefact_qr_code_searching"},{"@id":"spice:00006_mncn_artefact_qr_code_scanning"}, {"@id":"spice:00006_mncn_artefact_presentation"}, {"@id":"spice:00006_mncn_multiple_choice_answering"}, {"@id":"spice:00006_mncn_free_text_answering"}, {"@id":"spice:00006_mncn_user_artefact_drawing"}, {"@id":"spice:00006_mncn_user_map_location"}, {"@id":"spice:00006_mncn_clue_receiving"}],
           "conditional_follows":[{"@id": "spice:00006_mncn_treasure_hunt_activity_preparation"},{"@id":"spice:00006_mncn_artefact_qr_code_searching"},{"@id":"spice:00006_mncn_artefact_qr_code_scanning"}, {"@id":"spice:00006_mncn_artefact_presentation"}, {"@id":"spice:00006_mncn_multiple_choice_answering"}, {"@id":"spice:00006_mncn_free_text_answering"}, {"@id":"spice:00006_mncn_user_artefact_drawing"}, {"@id":"spice:00006_mncn_user_map_location"}, {"@id":"spice:00006_mncn_clue_receiving"}],
           "task_role":[{"@id":"script:software-agent"}, {"@id":"script:web-user"}],
